@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				EE95DB3A2B502753007D930A /* FlashcardsApp.swift */,
-				EE95DB3C2B502753007D930A /* ContentView.swift */,
+				EE95DB492B5027A8007D930A /* Views */,
 				EE95DB3E2B502755007D930A /* Assets.xcassets */,
 				EE95DB402B502755007D930A /* Flashcards.entitlements */,
 				EE95DB412B502755007D930A /* Preview Content */,
@@ -67,6 +67,14 @@
 				EE95DB422B502755007D930A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EE95DB492B5027A8007D930A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE95DB3C2B502753007D930A /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
