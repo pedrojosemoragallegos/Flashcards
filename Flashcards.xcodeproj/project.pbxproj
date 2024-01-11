@@ -11,6 +11,10 @@
 		EE95DB3D2B502753007D930A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB3C2B502753007D930A /* ContentView.swift */; };
 		EE95DB3F2B502755007D930A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE95DB3E2B502755007D930A /* Assets.xcassets */; };
 		EE95DB432B502755007D930A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE95DB422B502755007D930A /* Preview Assets.xcassets */; };
+		EE95DB4C2B502A9E007D930A /* SpacedRepetitionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB4B2B502A9E007D930A /* SpacedRepetitionStrategy.swift */; };
+		EE95DB4E2B502D78007D930A /* LeitnerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB4D2B502D78007D930A /* LeitnerSystem.swift */; };
+		EE95DB552B5054ED007D930A /* LearningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB542B5054ED007D930A /* LearningService.swift */; };
+		EE95DB592B5057C3007D930A /* StrategyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB582B5057C3007D930A /* StrategyFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		EE95DB3E2B502755007D930A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE95DB402B502755007D930A /* Flashcards.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Flashcards.entitlements; sourceTree = "<group>"; };
 		EE95DB422B502755007D930A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EE95DB4B2B502A9E007D930A /* SpacedRepetitionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacedRepetitionStrategy.swift; sourceTree = "<group>"; };
+		EE95DB4D2B502D78007D930A /* LeitnerSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeitnerSystem.swift; sourceTree = "<group>"; };
+		EE95DB542B5054ED007D930A /* LearningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningService.swift; sourceTree = "<group>"; };
+		EE95DB582B5057C3007D930A /* StrategyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +60,11 @@
 		EE95DB392B502753007D930A /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
+				EE95DB562B505580007D930A /* temp */,
 				EE95DB3A2B502753007D930A /* FlashcardsApp.swift */,
 				EE95DB492B5027A8007D930A /* Views */,
+				EE95DB4A2B5027F3007D930A /* SpacedRepetition */,
+				EE95DB532B5054DC007D930A /* Services */,
 				EE95DB3E2B502755007D930A /* Assets.xcassets */,
 				EE95DB402B502755007D930A /* Flashcards.entitlements */,
 				EE95DB412B502755007D930A /* Preview Content */,
@@ -75,6 +86,39 @@
 				EE95DB3C2B502753007D930A /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EE95DB4A2B5027F3007D930A /* SpacedRepetition */ = {
+			isa = PBXGroup;
+			children = (
+				EE95DB582B5057C3007D930A /* StrategyFactory.swift */,
+				EE95DB572B505788007D930A /* Strategies */,
+			);
+			path = SpacedRepetition;
+			sourceTree = "<group>";
+		};
+		EE95DB532B5054DC007D930A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EE95DB542B5054ED007D930A /* LearningService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EE95DB562B505580007D930A /* temp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = temp;
+			sourceTree = "<group>";
+		};
+		EE95DB572B505788007D930A /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				EE95DB4B2B502A9E007D930A /* SpacedRepetitionStrategy.swift */,
+				EE95DB4D2B502D78007D930A /* LeitnerSystem.swift */,
+			);
+			path = Strategies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +191,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE95DB552B5054ED007D930A /* LearningService.swift in Sources */,
+				EE95DB4C2B502A9E007D930A /* SpacedRepetitionStrategy.swift in Sources */,
 				EE95DB3D2B502753007D930A /* ContentView.swift in Sources */,
+				EE95DB4E2B502D78007D930A /* LeitnerSystem.swift in Sources */,
 				EE95DB3B2B502753007D930A /* FlashcardsApp.swift in Sources */,
+				EE95DB592B5057C3007D930A /* StrategyFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
