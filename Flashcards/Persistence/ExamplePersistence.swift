@@ -1,4 +1,3 @@
-class Example {}
 /*
  class SQLDataSource:
      def __init__(self, db_session):
