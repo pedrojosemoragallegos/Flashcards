@@ -126,3 +126,12 @@ class Flashcard {
 var databaseManager = InMemoryDatabaseManager()
 var flashcardAccess = InMemoryFlashcardAccess(databaseManager: databaseManager)
 var flashcardRepository = FlashcardRepository(dataAccessInterface: flashcardAccess)
+
+class CoreDataRepository<T> {
+    func getAll() {
+        print("d")
+    }
+}
+
+
+
