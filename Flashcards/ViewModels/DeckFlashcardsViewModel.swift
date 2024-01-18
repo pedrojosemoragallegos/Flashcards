@@ -1,23 +1,25 @@
 import Foundation
 
 class DeckFlashcardsViewModel: ObservableObject {
-    @Published var flashcards: [Flashcard]
+    @Published var flashcards: [Flashcard] = []
     
-    private let service: FlashcardService
+    private let deck: Deck
+    private let flashcardService: FlashcardService
 
-    init(service: FlashcardService, deck: Deck) {
-        self.service = service
-        self.flashcards = []
-        self.flashcards = loadFlashcards(flashcardIDs: Array(deck.flashcards))
+    init(
+        flashcardService: FlashcardService,
+        deck: Deck
+    ) {
+        self.deck = deck
+        self.flashcardService = flashcardService
+        loadFlashcards()
     }
     
-    private func loadFlashcards(flashcardIDs: [Int]) -> [Flashcard] {
-        var temp: [Flashcard] = []
-        for flashcardID in flashcardIDs {
-            let flashcard = service.get(byID: flashcardID)
-            temp.append(flashcard!)
+    private func loadFlashcards() {
+        for flashcardID in Array(deck.flashcards) {
+            let flashcard = flashcardService.get(byID: flashcardID)
+            flashcards.append(flashcard!)
         }
-        return temp
     }
     
     func addToDeck() {
@@ -25,3 +27,4 @@ class DeckFlashcardsViewModel: ObservableObject {
     }
     
 }
+

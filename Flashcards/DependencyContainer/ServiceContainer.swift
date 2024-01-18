@@ -1,4 +1,6 @@
-class DependencyContainer {
+import Foundation
+
+class ServiceContainer: ObservableObject {
     private let flashcardRepository: any FlashcardRepositoryProtocol
     let flashCardService: FlashcardService
     private let deckRepository: any DeckRepositoryProtocol
@@ -38,7 +40,6 @@ class DependencyContainer {
         
         deckService.addFlashcard(flashcard: flashcard21, deck: deck2)
         deckService.addFlashcard(flashcard: flashcard22, deck: deck2)
-
     }
-    
+
 }

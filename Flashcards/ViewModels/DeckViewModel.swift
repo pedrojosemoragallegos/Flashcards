@@ -3,20 +3,20 @@ import Foundation
 class DeckViewModel: ObservableObject {
     @Published var decks: [Deck] = []
 
-    private let service: DeckService
+    private let deckService: DeckService
 
-    init(service: DeckService) {
-        self.service = service
+    init(deckService: DeckService) {
+        self.deckService = deckService
         loadFlashcards()
     }
 
     private func loadFlashcards() {
-        self.decks = service.getAll()
+        self.decks = deckService.getAll()
     }
     
     func addDeck(name: String) {
         let deck = Deck(name: name)
-        service.add(deck: deck)
+        deckService.add(deck: deck)
         decks.append(deck)
     }
     

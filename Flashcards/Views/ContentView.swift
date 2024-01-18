@@ -1,11 +1,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var deckViewModel: DeckViewModel
+    @Environment(\.serviceContainer) var serviceContainer: ServiceContainer
     @State private var selectedDeck: Deck?
     @State private var showingFlashcards = false
-    
-    var flashcardService: FlashcardService // TODO: find a better solution
+
+    private var deckViewModel: DeckViewModel {
+        DeckViewModel(deckService: serviceContainer.deckService)
+    }
 
     var body: some View {
         VStack {
@@ -27,20 +29,8 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingFlashcards) {
             if let selectedDeck = selectedDeck {
-                DeckFlashcardsView(viewModel: DeckFlashcardsViewModel(service: flashcardService, deck: selectedDeck), deck: selectedDeck)
+                DeckFlashcardsView(deck: selectedDeck)
             }
         }
-    }
-}
-
-struct DeckFlashcardsView: View {
-    @ObservedObject var viewModel: DeckFlashcardsViewModel
-    var deck: Deck
-
-    var body: some View {
-        List(viewModel.flashcards, id: \.id) { flashcard in
-            Text(flashcard.description)
-        }
-        .navigationTitle(deck.name)
     }
 }

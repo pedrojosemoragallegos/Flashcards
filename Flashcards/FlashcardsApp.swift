@@ -1,15 +1,24 @@
 import SwiftUI
 
+struct ServiceContainerKey: EnvironmentKey {
+    static let defaultValue: ServiceContainer = ServiceContainer(mockData: false)
+}
+
+extension EnvironmentValues {
+    var serviceContainer: ServiceContainer {
+        get { self[ServiceContainerKey.self] }
+        set { self[ServiceContainerKey.self] = newValue }
+    }
+}
+
 @main
 struct FlashcardsApp: App {
-    let container = DependencyContainer(mockData: true)
-    
+    let serviceContainer = ServiceContainer(mockData: true)
+
     var body: some Scene {
         WindowGroup {
-            ContentView(deckViewModel: DeckViewModel(service: container.deckService), 
-                        flashcardService: container.flashCardService
-            )
+            ContentView()
+                .environment(\.serviceContainer, serviceContainer)
         }
     }
-
 }
