@@ -12,19 +12,14 @@ struct ContentView: View {
     var body: some View {
         VStack {
             List(deckViewModel.decks, id: \.id) { deck in
-                HStack {
+                VStack {
                     Text("\(deck.name)")
-                    Divider()
                     Text("Num. Flashcards \(deck.flashcards.count)")
                 }
                 .onTapGesture {
                     self.selectedDeck = deck
                     self.showingFlashcards = true
                 }
-            }
-
-            Button("Add Mockdata") {
-                deckViewModel.addDeck(name: "DeckName")
             }
         }
         .sheet(isPresented: $showingFlashcards) {
