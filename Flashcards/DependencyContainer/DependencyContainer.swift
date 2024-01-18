@@ -1,7 +1,7 @@
 class DependencyContainer {
-    let flashcardRepository: any FlashcardRepositoryProtocol
+    private let flashcardRepository: any FlashcardRepositoryProtocol
     let flashCardService: FlashcardService
-    let deckRepository: any DeckRepositoryProtocol
+    private let deckRepository: any DeckRepositoryProtocol
     let deckService: DeckService
 
     init(mockData: Bool = true) {
@@ -17,7 +17,7 @@ class DependencyContainer {
         let deck1 = Deck(name: "English Vocabs")
         let flashcard11 = Flashcard(question: "Dog", answer: "Hund")
         let flashcard12 = Flashcard(question: "Cat", answer: "Katze")
-        let flashcard13 = Flashcard(question: "House", answer: "Hauss")
+        let flashcard13 = Flashcard(question: "House", answer: "Haus")
         
         deckService.add(deck: deck1)
         flashCardService.add(flashcard: flashcard11)

@@ -4,6 +4,8 @@ struct ContentView: View {
     @ObservedObject var deckViewModel: DeckViewModel
     @State private var selectedDeck: Deck?
     @State private var showingFlashcards = false
+    
+    var flashcardService: FlashcardService // TODO: find a better solution
 
     var body: some View {
         VStack {
@@ -25,20 +27,20 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showingFlashcards) {
             if let selectedDeck = selectedDeck {
-                FlashcardsView(deck: selectedDeck)
+                DeckFlashcardsView(viewModel: DeckFlashcardsViewModel(service: flashcardService, deck: selectedDeck), deck: selectedDeck)
             }
         }
     }
 }
 
-struct FlashcardsView: View {
+struct DeckFlashcardsView: View {
+    @ObservedObject var viewModel: DeckFlashcardsViewModel
     var deck: Deck
 
     var body: some View {
-        List(Array(deck.flashcards), id: \.self) { flashcardID in
-            Text("Flashcard \(flashcardID)")
+        List(viewModel.flashcards, id: \.id) { flashcard in
+            Text(flashcard.description)
         }
         .navigationTitle(deck.name)
     }
 }
-

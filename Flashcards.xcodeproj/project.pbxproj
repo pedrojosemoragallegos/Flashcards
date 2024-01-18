@@ -16,6 +16,7 @@
 		EE7699292B5953B8005EB7FC /* DeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7699282B5953B8005EB7FC /* DeckViewModel.swift */; };
 		EE76992B2B5953D2005EB7FC /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE76992A2B5953D2005EB7FC /* DeckService.swift */; };
 		EE76992D2B59541F005EB7FC /* DeckRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE76992C2B59541F005EB7FC /* DeckRepositoryProtocol.swift */; };
+		EE76992F2B598538005EB7FC /* DeckFlashcardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE76992E2B598538005EB7FC /* DeckFlashcardsViewModel.swift */; };
 		EE95DB3B2B502753007D930A /* FlashcardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB3A2B502753007D930A /* FlashcardsApp.swift */; };
 		EE95DB3D2B502753007D930A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB3C2B502753007D930A /* ContentView.swift */; };
 		EE95DB3F2B502755007D930A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE95DB3E2B502755007D930A /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		EE7699282B5953B8005EB7FC /* DeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewModel.swift; sourceTree = "<group>"; };
 		EE76992A2B5953D2005EB7FC /* DeckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
 		EE76992C2B59541F005EB7FC /* DeckRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRepositoryProtocol.swift; sourceTree = "<group>"; };
+		EE76992E2B598538005EB7FC /* DeckFlashcardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckFlashcardsViewModel.swift; sourceTree = "<group>"; };
 		EE95DB372B502753007D930A /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE95DB3A2B502753007D930A /* FlashcardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsApp.swift; sourceTree = "<group>"; };
 		EE95DB3C2B502753007D930A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,8 +93,9 @@
 		EE5DFE742B59477700BF8B90 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */,
+				EE76992E2B598538005EB7FC /* DeckFlashcardsViewModel.swift */,
 				EE7699282B5953B8005EB7FC /* DeckViewModel.swift */,
+				EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				EE95DB3B2B502753007D930A /* FlashcardsApp.swift in Sources */,
 				EE49B4E62B51BC3300A5B699 /* DataSourceProtocol.swift in Sources */,
 				EE95DB592B5057C3007D930A /* StrategyFactory.swift in Sources */,
+				EE76992F2B598538005EB7FC /* DeckFlashcardsViewModel.swift in Sources */,
 				EE49B4E02B519C0400A5B699 /* InMemoryFlashcardRepository.swift in Sources */,
 				EE7699292B5953B8005EB7FC /* DeckViewModel.swift in Sources */,
 				EE5DFE712B5934B000BF8B90 /* DependencyContainer.swift in Sources */,

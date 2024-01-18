@@ -6,7 +6,9 @@ struct FlashcardsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(deckViewModel: DeckViewModel(service: container.deckService))
+            ContentView(deckViewModel: DeckViewModel(service: container.deckService), 
+                        flashcardService: container.flashCardService
+            )
         }
     }
 
