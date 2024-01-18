@@ -1,3 +1,3 @@
-protocol FlashcardRepositoryProtocol: RepositoryProtocol {
+protocol FlashcardRepositoryProtocol: RepositoryProtocol where Model == Flashcard {
     
 }

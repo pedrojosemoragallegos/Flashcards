@@ -1,13 +1,8 @@
-//
-//  ContentView.swift
-//  Flashcards
-//
-//  Created by Pedro José  on 11.01.24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var flashcardsService: FlashcardService
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")

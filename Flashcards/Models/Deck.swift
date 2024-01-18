@@ -1,4 +1,8 @@
-struct Deck {
-    var id: Int
-    var specialFlashard: [SpecialFlashard]
+class Deck {
+    var id: Int?
+    
+    init() {
+        self.id = nil
+    }
+    
 }

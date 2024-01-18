@@ -1,8 +1,26 @@
-class FlashcardService {
-    private let flashcardRepository: any FlashcardRepositoryProtocol
+import Foundation
+
+class FlashcardService: ObservableObject {
+    private let repository: any FlashcardRepositoryProtocol
     
-    init(flashcardRepository: any FlashcardRepositoryProtocol) {
-        self.flashcardRepository = flashcardRepository
+    init(repository: any FlashcardRepositoryProtocol) {
+        self.repository = repository
+    }
+    
+    func add(flashcard: Flashcard) {
+        repository.create(model: flashcard)
+    }
+    
+    func get(byID id: Int) -> Flashcard? {
+        return repository.get(byID: id)
+    }
+    
+    func update(flashcard: Flashcard) -> Bool {
+        return repository.update(model: flashcard)
+    }
+    
+    func delete(flashcard: Flashcard) -> Bool {
+        return repository.delete(model: flashcard)
     }
       
 }

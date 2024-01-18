@@ -4,11 +4,10 @@ class Flashcard {
     var answer: String
     
     init(
-        id: Int? = nil,
         question: String,
         answer: String
     ) {
-        self.id = id
+        self.id = nil
         self.question = question
         self.answer = answer
     }
