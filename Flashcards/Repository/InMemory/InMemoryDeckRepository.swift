@@ -1,4 +1,5 @@
 class InMemoryDeckRepository: RepositoryProtocol {
+    
     typealias Model = Deck
     
     var idCount: Int
@@ -19,6 +20,10 @@ class InMemoryDeckRepository: RepositoryProtocol {
     
     func get(byID id: Int) -> Model? {
         return decks[id]
+    }
+    
+    func getAll() -> [Deck] {
+        return Array(decks.values)
     }
     
     func update(model deck: Model) -> Bool {

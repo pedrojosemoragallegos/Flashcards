@@ -1,4 +1,5 @@
 class InMemoryFlashcardRepository: FlashcardRepositoryProtocol {
+    
     typealias Model = Flashcard
     
     var idCount: Int
@@ -19,6 +20,10 @@ class InMemoryFlashcardRepository: FlashcardRepositoryProtocol {
     
     func get(byID id: Int) -> Model? {
         return flashcards[id]
+    }
+    
+    func getAll() -> [Flashcard] {
+        return Array(flashcards.values)
     }
     
     func update(model flashcard: Model) -> Bool {

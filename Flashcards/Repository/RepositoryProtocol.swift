@@ -3,6 +3,7 @@ protocol RepositoryProtocol {
 
     func create(model: Model)
     func get(byID id: Int) -> Model?
+    func getAll() -> [Model]
     func update(model: Model) -> Bool
     func delete(model: Model) -> Bool
     

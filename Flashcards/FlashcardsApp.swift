@@ -6,8 +6,8 @@ struct FlashcardsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(container.flashCardService)
+            ContentView(viewModel: FlashcardViewModel(service: container.flashCardService))
         }
     }
+
 }

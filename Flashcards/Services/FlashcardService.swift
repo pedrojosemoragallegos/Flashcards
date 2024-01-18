@@ -15,6 +15,10 @@ class FlashcardService: ObservableObject {
         return repository.get(byID: id)
     }
     
+    func getAll() -> [Flashcard] {
+        return repository.getAll()
+    }
+    
     func update(flashcard: Flashcard) -> Bool {
         return repository.update(model: flashcard)
     }

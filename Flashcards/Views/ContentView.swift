@@ -1,19 +1,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var flashcardsService: FlashcardService
+    @ObservedObject var viewModel: FlashcardViewModel
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            List(viewModel.flashcards, id: \.id) { flashcard in
+                VStack(alignment: .leading) {
+                      Text("Q: \(flashcard.question)")
+                      Text("A: \(flashcard.answer)")
+                  }
+            }
+            
+            Button("Add Flashcard") {
+                viewModel.addFlashcard(question: "Question", answer: "Answer")
+            }
         }
-        .padding()
+
     }
 }
 
-#Preview {
-    ContentView()
-}
