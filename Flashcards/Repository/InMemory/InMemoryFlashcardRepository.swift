@@ -1,5 +1,4 @@
 class InMemoryFlashcardRepository: FlashcardRepositoryProtocol {
-    
     typealias Model = Flashcard
     
     var idCount: Int

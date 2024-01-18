@@ -1,19 +1,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel: FlashcardViewModel
+    @ObservedObject var deckViewModel: DeckViewModel
     
     var body: some View {
         VStack {
-            List(viewModel.flashcards, id: \.id) { flashcard in
+            List(deckViewModel.decks, id: \.id) { deck in
                 VStack(alignment: .leading) {
-                      Text("Q: \(flashcard.question)")
-                      Text("A: \(flashcard.answer)")
-                  }
+                    Text("\(deck.name)")
+                    Text("5")
+                }
             }
             
-            Button("Add Flashcard") {
-                viewModel.addFlashcard(question: "Question", answer: "Answer")
+            Button("Add Deck") {
+                deckViewModel.addDeck(name: "DeckName")
             }
         }
 

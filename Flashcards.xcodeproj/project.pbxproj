@@ -13,6 +13,9 @@
 		EE5DFE712B5934B000BF8B90 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DFE702B5934B000BF8B90 /* DependencyContainer.swift */; };
 		EE5DFE732B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DFE722B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift */; };
 		EE5DFE762B59478E00BF8B90 /* FlashcardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */; };
+		EE7699292B5953B8005EB7FC /* DeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7699282B5953B8005EB7FC /* DeckViewModel.swift */; };
+		EE76992B2B5953D2005EB7FC /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE76992A2B5953D2005EB7FC /* DeckService.swift */; };
+		EE76992D2B59541F005EB7FC /* DeckRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE76992C2B59541F005EB7FC /* DeckRepositoryProtocol.swift */; };
 		EE95DB3B2B502753007D930A /* FlashcardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB3A2B502753007D930A /* FlashcardsApp.swift */; };
 		EE95DB3D2B502753007D930A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB3C2B502753007D930A /* ContentView.swift */; };
 		EE95DB3F2B502755007D930A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE95DB3E2B502755007D930A /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 		EE5DFE702B5934B000BF8B90 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		EE5DFE722B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardRepositoryProtocol.swift; sourceTree = "<group>"; };
 		EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewModel.swift; sourceTree = "<group>"; };
+		EE7699282B5953B8005EB7FC /* DeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewModel.swift; sourceTree = "<group>"; };
+		EE76992A2B5953D2005EB7FC /* DeckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
+		EE76992C2B59541F005EB7FC /* DeckRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRepositoryProtocol.swift; sourceTree = "<group>"; };
 		EE95DB372B502753007D930A /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE95DB3A2B502753007D930A /* FlashcardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsApp.swift; sourceTree = "<group>"; };
 		EE95DB3C2B502753007D930A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */,
+				EE7699282B5953B8005EB7FC /* DeckViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -115,9 +122,9 @@
 				EE5DFE6D2B59342600BF8B90 /* DependencyContainer */,
 				EE95DB532B5054DC007D930A /* Services */,
 				EE95DB4A2B5027F3007D930A /* SpacedRepetition */,
+				EEE5ABAD2B50625800DC56CE /* Models */,
 				EEE5ABBC2B50711A00DC56CE /* Repository */,
 				EEE5ABC42B51070800DC56CE /* Persistence */,
-				EEE5ABAD2B50625800DC56CE /* Models */,
 				EE95DB3E2B502755007D930A /* Assets.xcassets */,
 				EE95DB402B502755007D930A /* Flashcards.entitlements */,
 				EE95DB412B502755007D930A /* Preview Content */,
@@ -154,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				EEE5ABBA2B5070CA00DC56CE /* FlashcardService.swift */,
+				EE76992A2B5953D2005EB7FC /* DeckService.swift */,
 				EE95DB542B5054ED007D930A /* LearningService.swift */,
 			);
 			path = Services;
@@ -184,6 +192,7 @@
 			children = (
 				EEE5ABC02B5071B600DC56CE /* RepositoryProtocol.swift */,
 				EE5DFE722B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift */,
+				EE76992C2B59541F005EB7FC /* DeckRepositoryProtocol.swift */,
 				EE5DFE6A2B59259B00BF8B90 /* InMemory */,
 			);
 			path = Repository;
@@ -267,6 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE76992B2B5953D2005EB7FC /* DeckService.swift in Sources */,
+				EE76992D2B59541F005EB7FC /* DeckRepositoryProtocol.swift in Sources */,
 				EEE5ABB52B5064A500DC56CE /* Deck.swift in Sources */,
 				EEE5ABB82B5065A000DC56CE /* SpecialCard.swift in Sources */,
 				EEE5ABB22B50633C00DC56CE /* SuperMemoFlashcard.swift in Sources */,
@@ -280,6 +291,7 @@
 				EE49B4E62B51BC3300A5B699 /* DataSourceProtocol.swift in Sources */,
 				EE95DB592B5057C3007D930A /* StrategyFactory.swift in Sources */,
 				EE49B4E02B519C0400A5B699 /* InMemoryFlashcardRepository.swift in Sources */,
+				EE7699292B5953B8005EB7FC /* DeckViewModel.swift in Sources */,
 				EE5DFE712B5934B000BF8B90 /* DependencyContainer.swift in Sources */,
 				EEE5ABBB2B5070CA00DC56CE /* FlashcardService.swift in Sources */,
 				EE5DFE762B59478E00BF8B90 /* FlashcardViewModel.swift in Sources */,

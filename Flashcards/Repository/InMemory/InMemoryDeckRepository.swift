@@ -1,13 +1,20 @@
-class InMemoryDeckRepository: RepositoryProtocol {
-    
+class InMemoryDeckRepository: DeckRepositoryProtocol {
     typealias Model = Deck
     
     var idCount: Int
     var decks: [Int: Model]
     
-    init() {
+    init(mockData: Bool = true) {
         idCount = 0
         decks = [:]
+        
+        if mockData { createMockData() }
+    }
+    
+    private func createMockData() {
+        create(model: Deck(name: "English Vocabs"))
+        create(model: Deck(name: "Physics Formulas"))
+        create(model: Deck(name: "Spanish Vocabs"))
     }
 
     func create(model deck: Model) {
