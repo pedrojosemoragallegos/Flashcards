@@ -12,9 +12,10 @@ struct ContentView: View {
     var body: some View {
         VStack {
             List(deckViewModel.decks, id: \.id) { deck in
-                VStack {
+                HStack {
                     Text("\(deck.name)")
-                    Text("Num. Flashcards \(deck.flashcards.count)")
+                    Spacer()
+                    Text("\(deck.flashcards.count)")
                 }
                 .onTapGesture {
                     self.selectedDeck = deck
