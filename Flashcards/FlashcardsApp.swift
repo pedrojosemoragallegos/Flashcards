@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct FlashcardsApp: App {
-    let container = DependencyContainer()
+    let container = DependencyContainer(mockData: true)
     
     var body: some Scene {
         WindowGroup {

@@ -4,17 +4,9 @@ class InMemoryDeckRepository: DeckRepositoryProtocol {
     var idCount: Int
     var decks: [Int: Model]
     
-    init(mockData: Bool = true) {
+    init() {
         idCount = 0
         decks = [:]
-        
-        if mockData { createMockData() }
-    }
-    
-    private func createMockData() {
-        create(model: Deck(name: "English Vocabs"))
-        create(model: Deck(name: "Physics Formulas"))
-        create(model: Deck(name: "Spanish Vocabs"))
     }
 
     func create(model deck: Model) {
@@ -51,4 +43,12 @@ class InMemoryDeckRepository: DeckRepositoryProtocol {
         }
     }
     
+    func addFlashcard(flashcard: Flashcard, deck: Deck) {
+        if let flashcardID = flashcard.id, let deckID = deck.id {
+            deck.flashcards.insert(flashcardID)
+            flashcard.decks.insert(deckID)
+        } else {
+            fatalError("Implement correct error, but you can't add items never stored.")
+        }
+    }
 }

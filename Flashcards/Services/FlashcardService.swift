@@ -26,5 +26,9 @@ class FlashcardService: ObservableObject {
     func delete(flashcard: Flashcard) -> Bool {
         return repository.delete(model: flashcard)
     }
-      
+     
+    func addDeck(deck: Deck, flashcard: Flashcard) {
+        repository.addDeck(deck: deck, flashcard: flashcard)
+    }
+    
 }

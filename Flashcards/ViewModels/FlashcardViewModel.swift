@@ -1,6 +1,6 @@
 import Foundation
 
-class FlashcardViewModel: ObservableObject {
+class DeckFlashcardViewModel: ObservableObject {
     @Published var flashcards: [Flashcard] = []
 
     private let service: FlashcardService

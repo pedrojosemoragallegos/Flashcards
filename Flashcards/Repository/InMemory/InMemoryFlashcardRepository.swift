@@ -30,7 +30,7 @@ class InMemoryFlashcardRepository: FlashcardRepositoryProtocol {
             flashcards[flashcard.id!] = flashcard
             return true
         } else {
-            fatalError("Implement correct error, but you can't update a flashcard never stored")
+            fatalError("Implement correct error, but you can't update a flashcard never stored.")
         }
     }
     
@@ -39,7 +39,16 @@ class InMemoryFlashcardRepository: FlashcardRepositoryProtocol {
             flashcards.removeValue(forKey: flashcard.id!)
             return true
         } else {
-            fatalError("Implement correct error, but you can't delete a flashcard never stored")
+            fatalError("Implement correct error, but you can't delete a flashcard never stored.")
+        }
+    }
+    
+    func addDeck(deck: Deck, flashcard: Flashcard) {
+        if let deckID = deck.id, let flashcardID = flashcard.id {
+            flashcard.decks.insert(deckID)
+            deck.flashcards.insert(flashcardID)
+        } else {
+            fatalError("Implement correct error, but you can't add items never stored.")
         }
     }
     

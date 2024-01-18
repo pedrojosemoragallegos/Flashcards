@@ -27,4 +27,7 @@ class DeckService: ObservableObject {
         return repository.delete(model: deck)
     }
       
+    func addFlashcard(flashcard: Flashcard, deck: Deck) {
+        repository.addFlashcard(flashcard: flashcard, deck: deck)
+    }
 }
