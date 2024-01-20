@@ -7,11 +7,7 @@ class DeckViewModel: ObservableObject {
 
     init(deckService: DeckService) {
         self.deckService = deckService
-        loadFlashcards()
-    }
-
-    private func loadFlashcards() {
-        self.decks = deckService.getAll()
+        decks = deckService.getAll()
     }
     
     func addDeck(name: String) {

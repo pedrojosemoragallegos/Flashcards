@@ -1,23 +1,16 @@
+import Foundation
+
 class InMemoryDeckRepository: DeckRepositoryProtocol {
     typealias Model = Deck
     
-    var idCount: Int
-    var decks: [Int: Model]
-    
-    init() {
-        idCount = 0
-        decks = [:]
-    }
+    var decks = [UUID: Model]()
 
     func create(model deck: Model) {
-        if deck.id == nil {
-            deck.id = idCount
-            idCount += 1
-        }
+        if deck.id == nil { deck.id = UUID() }
         decks[deck.id!] = deck
     }
     
-    func get(byID id: Int) -> Model? {
+    func get(byID id: UUID) -> Model? {
         return decks[id]
     }
     
@@ -44,9 +37,9 @@ class InMemoryDeckRepository: DeckRepositoryProtocol {
     }
     
     func addFlashcard(flashcard: Flashcard, deck: Deck) {
-        if let flashcardID = flashcard.id, let deckID = deck.id {
-            deck.flashcards.insert(flashcardID)
-            flashcard.decks.insert(deckID)
+        if flashcard.id != nil, deck.id != nil {
+            deck.flashcards.append(flashcard)
+            flashcard.decks.append(deck)
         } else {
             fatalError("Implement correct error, but you can't add items never stored.")
         }

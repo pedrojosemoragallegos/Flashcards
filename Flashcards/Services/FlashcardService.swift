@@ -11,7 +11,7 @@ class FlashcardService: ObservableObject {
         repository.create(model: flashcard)
     }
     
-    func get(byID id: Int) -> Flashcard? {
+    func get(byID id: UUID) -> Flashcard? {
         return repository.get(byID: id)
     }
     

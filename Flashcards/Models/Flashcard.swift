@@ -1,17 +1,17 @@
-class Flashcard: CustomStringConvertible{
-    var id: Int?
+import Foundation
+
+class Flashcard: CustomStringConvertible {
+    var id: UUID?
     var question: String
     var answer: String
-    var decks: Set<Int>
+    var decks = [Deck]()
     
     init(
         question: String,
         answer: String
     ) {
-        self.id = nil
         self.question = question
         self.answer = answer
-        self.decks = Set<Int>()
     }
     
     convenience init(
@@ -22,14 +22,14 @@ class Flashcard: CustomStringConvertible{
         self.init(question: question, answer: answer)
         // add only decks which are in stored in the database
         for deck in decks {
-            if let deckId = deck.id {
-                self.decks.insert(deckId)
+            if deck.id != nil {
+                self.decks.append(deck)
             }
         }
     }
     
     var description: String {
-        return "Flashcard(\(id ?? -1), question: \(question), answer: \(answer), decks: \(decks)"
+        return "Flashcard(\(id!), question: \(question), answer: \(answer), decks: \(decks)"
     }
     
 }

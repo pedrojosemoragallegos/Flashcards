@@ -17,7 +17,7 @@ struct FlashcardsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: DeckViewModel(deckService: serviceContainer.deckService))
                 .environment(\.serviceContainer, serviceContainer)
         }
     }

@@ -2,31 +2,20 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.serviceContainer) var serviceContainer: ServiceContainer
-    @State private var selectedDeck: Deck?
-    @State private var showingFlashcards = false
-
-    private var deckViewModel: DeckViewModel {
-        DeckViewModel(deckService: serviceContainer.deckService)
-    }
+    @ObservedObject var viewModel: DeckViewModel
 
     var body: some View {
-        VStack {
-            List(deckViewModel.decks, id: \.id) { deck in
-                HStack {
-                    Text("\(deck.name)")
-                    Spacer()
-                    Text("\(deck.flashcards.count)")
-                }
-                .onTapGesture {
-                    self.selectedDeck = deck
-                    self.showingFlashcards = true
+        NavigationView {
+            List(viewModel.decks, id: \.id) { deck in
+                NavigationLink(destination: DeckFlashcardsView(viewModel: DeckFlashcardsViewModel(deckService: serviceContainer.deckService, flashcardService: serviceContainer.flashCardService, deck: deck))) {
+                    HStack {
+                        Text("\(deck.name)")
+                        Spacer()
+                        Text("\(deck.flashcards.count)")
+                    }
                 }
             }
-        }
-        .sheet(isPresented: $showingFlashcards) {
-            if let selectedDeck = selectedDeck {
-                DeckFlashcardsView(deck: selectedDeck)
-            }
+            .navigationBarTitle("Decks")
         }
     }
 }

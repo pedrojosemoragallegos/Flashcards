@@ -11,7 +11,7 @@ class DeckService: ObservableObject {
         repository.create(model: deck)
     }
     
-    func get(byID id: Int) -> Deck? {
+    func get(byID id: UUID) -> Deck? {
         return repository.get(byID: id)
     }
     

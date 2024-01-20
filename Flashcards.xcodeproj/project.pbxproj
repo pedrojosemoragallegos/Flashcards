@@ -16,7 +16,6 @@
 		EE7699292B5953B8005EB7FC /* DeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7699282B5953B8005EB7FC /* DeckViewModel.swift */; };
 		EE76992B2B5953D2005EB7FC /* DeckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE76992A2B5953D2005EB7FC /* DeckService.swift */; };
 		EE76992D2B59541F005EB7FC /* DeckRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE76992C2B59541F005EB7FC /* DeckRepositoryProtocol.swift */; };
-		EE76992F2B598538005EB7FC /* DeckFlashcardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE76992E2B598538005EB7FC /* DeckFlashcardsViewModel.swift */; };
 		EE76994E2B599F24005EB7FC /* DeckFlashcardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE76994D2B599F24005EB7FC /* DeckFlashcardsView.swift */; };
 		EE95DB3B2B502753007D930A /* FlashcardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB3A2B502753007D930A /* FlashcardsApp.swift */; };
 		EE95DB3D2B502753007D930A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB3C2B502753007D930A /* ContentView.swift */; };
@@ -26,6 +25,7 @@
 		EE95DB4E2B502D78007D930A /* LeitnerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB4D2B502D78007D930A /* LeitnerSystem.swift */; };
 		EE95DB552B5054ED007D930A /* LearningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB542B5054ED007D930A /* LearningService.swift */; };
 		EE95DB592B5057C3007D930A /* StrategyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95DB582B5057C3007D930A /* StrategyFactory.swift */; };
+		EEA633EE2B5C18590082F3D0 /* DeckFlashcardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA633ED2B5C18590082F3D0 /* DeckFlashcardsViewModel.swift */; };
 		EEE5ABB02B5062F900DC56CE /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5ABAF2B5062F900DC56CE /* Flashcard.swift */; };
 		EEE5ABB22B50633C00DC56CE /* SuperMemoFlashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5ABB12B50633C00DC56CE /* SuperMemoFlashcard.swift */; };
 		EEE5ABB52B5064A500DC56CE /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5ABB42B5064A500DC56CE /* Deck.swift */; };
@@ -44,7 +44,6 @@
 		EE7699282B5953B8005EB7FC /* DeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewModel.swift; sourceTree = "<group>"; };
 		EE76992A2B5953D2005EB7FC /* DeckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckService.swift; sourceTree = "<group>"; };
 		EE76992C2B59541F005EB7FC /* DeckRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckRepositoryProtocol.swift; sourceTree = "<group>"; };
-		EE76992E2B598538005EB7FC /* DeckFlashcardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckFlashcardsViewModel.swift; sourceTree = "<group>"; };
 		EE76994D2B599F24005EB7FC /* DeckFlashcardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckFlashcardsView.swift; sourceTree = "<group>"; };
 		EE95DB372B502753007D930A /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE95DB3A2B502753007D930A /* FlashcardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsApp.swift; sourceTree = "<group>"; };
@@ -56,6 +55,7 @@
 		EE95DB4D2B502D78007D930A /* LeitnerSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeitnerSystem.swift; sourceTree = "<group>"; };
 		EE95DB542B5054ED007D930A /* LearningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningService.swift; sourceTree = "<group>"; };
 		EE95DB582B5057C3007D930A /* StrategyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyFactory.swift; sourceTree = "<group>"; };
+		EEA633ED2B5C18590082F3D0 /* DeckFlashcardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckFlashcardsViewModel.swift; sourceTree = "<group>"; };
 		EEE5ABAF2B5062F900DC56CE /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		EEE5ABB12B50633C00DC56CE /* SuperMemoFlashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperMemoFlashcard.swift; sourceTree = "<group>"; };
 		EEE5ABB42B5064A500DC56CE /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				EE7699282B5953B8005EB7FC /* DeckViewModel.swift */,
-				EE76992E2B598538005EB7FC /* DeckFlashcardsViewModel.swift */,
 				EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */,
+				EEA633ED2B5C18590082F3D0 /* DeckFlashcardsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -290,6 +290,7 @@
 				EEE5ABC12B5071B600DC56CE /* RepositoryProtocol.swift in Sources */,
 				EE76994E2B599F24005EB7FC /* DeckFlashcardsView.swift in Sources */,
 				EE95DB552B5054ED007D930A /* LearningService.swift in Sources */,
+				EEA633EE2B5C18590082F3D0 /* DeckFlashcardsViewModel.swift in Sources */,
 				EE5DFE732B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift in Sources */,
 				EE95DB4C2B502A9E007D930A /* SpacedRepetitionStrategy.swift in Sources */,
 				EE95DB3D2B502753007D930A /* ContentView.swift in Sources */,
@@ -297,7 +298,6 @@
 				EE95DB3B2B502753007D930A /* FlashcardsApp.swift in Sources */,
 				EE49B4E62B51BC3300A5B699 /* DataSourceProtocol.swift in Sources */,
 				EE95DB592B5057C3007D930A /* StrategyFactory.swift in Sources */,
-				EE76992F2B598538005EB7FC /* DeckFlashcardsViewModel.swift in Sources */,
 				EE49B4E02B519C0400A5B699 /* InMemoryFlashcardRepository.swift in Sources */,
 				EE7699292B5953B8005EB7FC /* DeckViewModel.swift in Sources */,
 				EE5DFE712B5934B000BF8B90 /* ServiceContainer.swift in Sources */,

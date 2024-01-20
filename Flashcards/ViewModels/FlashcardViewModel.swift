@@ -7,11 +7,7 @@ class FlashcardViewModel: ObservableObject {
 
     init(service: FlashcardService) {
         self.service = service
-        loadFlashcards()
-    }
-
-    private func loadFlashcards() {
-        self.flashcards = service.getAll()
+        flashcards = service.getAll()
     }
     
     func addFlashcard(question: String, answer: String) {
