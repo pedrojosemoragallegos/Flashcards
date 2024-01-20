@@ -158,7 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				EE95DB582B5057C3007D930A /* StrategyFactory.swift */,
-				EE95DB572B505788007D930A /* Strategies */,
+				EE95DB4B2B502A9E007D930A /* SpacedRepetitionStrategy.swift */,
+				EE95DB4D2B502D78007D930A /* LeitnerSystem.swift */,
 			);
 			path = SpacedRepetition;
 			sourceTree = "<group>";
@@ -171,15 +172,6 @@
 				EE95DB542B5054ED007D930A /* LearningService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		EE95DB572B505788007D930A /* Strategies */ = {
-			isa = PBXGroup;
-			children = (
-				EE95DB4B2B502A9E007D930A /* SpacedRepetitionStrategy.swift */,
-				EE95DB4D2B502D78007D930A /* LeitnerSystem.swift */,
-			);
-			path = Strategies;
 			sourceTree = "<group>";
 		};
 		EEE5ABAD2B50625800DC56CE /* Models */ = {
