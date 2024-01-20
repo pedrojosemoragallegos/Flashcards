@@ -16,12 +16,7 @@ class Deck: CustomStringConvertible {
         flashcards: [Flashcard]
     ) {
         self.init(name: name)
-        // add only flashcards which are in stored in the database
-        for flashcard in flashcards {
-            if flashcard.id != nil {
-                self.flashcards.append(flashcard)
-            }
-        }
+        self.flashcards += flashcards
     }
     
     var description: String {

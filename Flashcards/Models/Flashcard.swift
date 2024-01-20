@@ -20,12 +20,7 @@ class Flashcard: CustomStringConvertible {
         decks: [Deck]
     ) {
         self.init(question: question, answer: answer)
-        // add only decks which are in stored in the database
-        for deck in decks {
-            if deck.id != nil {
-                self.decks.append(deck)
-            }
-        }
+        self.decks += decks
     }
     
     var description: String {
