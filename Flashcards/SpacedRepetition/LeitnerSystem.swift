@@ -26,6 +26,6 @@ struct LeitnerSystem: SpacedRepetitionProtocol {
         let newBox = isCorrect ? min(currentBox + 1, numberOfBoxes) : 1
         boxMapping[newBox, default: []].append(card)
     }
-     */w
+     */
     
 }
