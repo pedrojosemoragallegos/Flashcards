@@ -35,9 +35,9 @@ class FlashcardService: ObservableObject {
     
     func updatePerformance(flashcard: SpecialCardProtocol, performance: PerformanceProtocol) {
         if let leitnerCard = flashcard as? LeitnerSystemCard {
-            LeitnerSystem.updateCard(specialCard: leitnerCard, performance: performance as! LeitnerSystem.PerformanceProtocol)
+            LeitnerSystem.updateCard(specialCard: leitnerCard, performance: performance as! LeitnerSystem.PerformanceType)
         } else if let ankiCard = flashcard as? AnkiAlgorithmCard {
-            AnkiAlgorithm.updateCard(specialCard: ankiCard, performance: performance as! AnkiAlgorithm.PerformanceProtocol)
+            AnkiAlgorithm.updateCard(specialCard: ankiCard, performance: performance as! AnkiAlgorithm.PerformanceType)
         } else {
             fatalError("Unknown algorithm type")
         }

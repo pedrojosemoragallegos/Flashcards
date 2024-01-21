@@ -3,8 +3,8 @@ import Foundation
 protocol PerformanceProtocol {}
 
 protocol SpacedRepetitionProtocol {
-    associatedtype SpecialCardProtocol
-    associatedtype PerformanceProtocol
+    associatedtype SpecialCardType
+    associatedtype PerformanceType
     
-    static func updateCard(specialCard: SpecialCardProtocol, performance: PerformanceProtocol)
+    static func updateCard(specialCard: SpecialCardType, performance: PerformanceType)
 }

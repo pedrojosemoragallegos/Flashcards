@@ -7,10 +7,10 @@ enum AnkiAlgorithmPerformance: PerformanceProtocol {
 }
 
 struct AnkiAlgorithm: SpacedRepetitionProtocol {
-    typealias SpecialCardProtocol = AnkiAlgorithmCard
-    typealias PerformanceProtocol = AnkiAlgorithmPerformance
+    typealias SpecialCardType = AnkiAlgorithmCard
+    typealias PerformanceType = AnkiAlgorithmPerformance
     
-    static func updateCard(specialCard: AnkiAlgorithmCard, performance: PerformanceProtocol) {
+    static func updateCard(specialCard: AnkiAlgorithmCard, performance: AnkiAlgorithmPerformance) {
         switch performance {
         case .again:
             print("again")

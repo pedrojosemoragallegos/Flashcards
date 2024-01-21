@@ -6,10 +6,10 @@ enum LeitnerSystemPerformance: PerformanceProtocol {
 }
 
 struct LeitnerSystem: SpacedRepetitionProtocol {
-    typealias SpecialCardProtocol = LeitnerSystemCard
-    typealias PerformanceProtocol = LeitnerSystemPerformance
+    typealias SpecialCardType = LeitnerSystemCard
+    typealias PerformanceType = LeitnerSystemPerformance
     
-    static func updateCard(specialCard: LeitnerSystemCard, performance: PerformanceProtocol) {
+    static func updateCard(specialCard: LeitnerSystemCard, performance: LeitnerSystemPerformance) {
         switch performance {
         case .correct:
             print("Correct")
