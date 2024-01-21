@@ -3,6 +3,7 @@ import SwiftUI
 struct DeckFlashcardsView: View {
     @Environment(\.serviceContainer) var serviceContainer: ServiceContainer
     @ObservedObject var viewModel: DeckFlashcardsViewModel
+    @State private var selectedCards: [UUID: Bool] = [:]
 
     var body: some View {
         List(viewModel.specialCards, id: \.id) { specialCard in
@@ -12,33 +13,22 @@ struct DeckFlashcardsView: View {
                     .foregroundColor(.secondary)
                 
                 HStack {
-                    Text("Question:")
-                        .fontWeight(.bold)
                     Text(specialCard.flashcard.question)
                     Spacer()
                 }
-
-                HStack {
-                    Text("Answer:")
-                        .fontWeight(.bold)
+                
+                if selectedCards[specialCard.id, default: false] {
                     Text(specialCard.flashcard.answer)
-                    Spacer()
+                        .foregroundColor(.gray) 
                 }
             }
-            Button(action: {
-                //never call it like that but its for testing
-                serviceContainer.learningService.updateCard(flashcard: specialCard)
-            }) {
-                Text("Perform Action")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+            .onTapGesture {
+                withAnimation {
+                    selectedCards[specialCard.id] = !(selectedCards[specialCard.id] ?? false)
+                }
             }
             .padding(.vertical)
         }
         .navigationTitle(viewModel.deck.name)
     }
 }
-

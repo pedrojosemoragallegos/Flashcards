@@ -134,8 +134,8 @@
 				EE95DB532B5054DC007D930A /* Services */,
 				EE95DB4A2B5027F3007D930A /* SpacedRepetition */,
 				EEE5ABBC2B50711A00DC56CE /* Repository */,
-				EEE5ABC42B51070800DC56CE /* Persistence */,
 				EEE5ABAD2B50625800DC56CE /* Models */,
+				EEE5ABC42B51070800DC56CE /* Persistence */,
 				EE95DB3E2B502755007D930A /* Assets.xcassets */,
 				EE95DB402B502755007D930A /* Flashcards.entitlements */,
 				EE95DB412B502755007D930A /* Preview Content */,
@@ -192,7 +192,8 @@
 		EEE5ABAD2B50625800DC56CE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EEE6CB772B5CAFDB0049A08F /* Protocols */,
+				EEE5ABB42B5064A500DC56CE /* DeckProtocol.swift */,
+				EEE5ABB72B5065A000DC56CE /* SpecialCardProtocol.swift */,
 				EEE5ABAF2B5062F900DC56CE /* Flashcard.swift */,
 				EEA633F12B5C81770082F3D0 /* LeitnerSystem */,
 				EEE6CB7A2B5D1AD60049A08F /* AnkiAlgorithm */,
@@ -217,15 +218,6 @@
 				EE49B4E52B51BC3300A5B699 /* DataSourceProtocol.swift */,
 			);
 			path = Persistence;
-			sourceTree = "<group>";
-		};
-		EEE6CB772B5CAFDB0049A08F /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				EEE5ABB42B5064A500DC56CE /* DeckProtocol.swift */,
-				EEE5ABB72B5065A000DC56CE /* SpecialCardProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		EEE6CB7A2B5D1AD60049A08F /* AnkiAlgorithm */ = {
