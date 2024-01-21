@@ -11,9 +11,4 @@ class Flashcard {
         self.answer = answer
     }
     
-    convenience init(question: String, answer: String, decks: [DeckProtocol]) {
-        self.init(question: question, answer: answer)
-        self.decks += decks
-    }
-    
 }

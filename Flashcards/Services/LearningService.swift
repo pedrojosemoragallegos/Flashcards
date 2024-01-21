@@ -1,4 +1,6 @@
-struct LearningService {
+import Foundation
+
+class LearningService: ObservableObject {
     private let spacedRepetitionFactory = StrategyFactory()
     
     func doSomething(deckType: DeckProtocol.Type) {
