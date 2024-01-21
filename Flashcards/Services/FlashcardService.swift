@@ -11,6 +11,12 @@ class FlashcardService: ObservableObject {
         repository.create(model: flashcard)
     }
     
+    func add(flashcards: [Flashcard]) {
+        flashcards.forEach { flashcard in
+            add(flashcard: flashcard)
+        }
+    }
+    
     func get(byID id: UUID) -> Flashcard? {
         return repository.get(byID: id)
     }
@@ -25,10 +31,6 @@ class FlashcardService: ObservableObject {
     
     func delete(flashcard: Flashcard) -> Bool {
         return repository.delete(model: flashcard)
-    }
-     
-    func addDeck(deck: Deck, flashcard: Flashcard) {
-        repository.addDeck(deck: deck, flashcard: flashcard)
     }
     
 }

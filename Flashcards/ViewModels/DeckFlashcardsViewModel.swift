@@ -1,23 +1,14 @@
 import Foundation
 
 class DeckFlashcardsViewModel: ObservableObject {
-    @Published var flashcards: [Flashcard]
-    let deck: Deck
+    @Published var specialCards: [SpecialCardProtocol]
+    let deck: DeckProtocol
     private let deckService: DeckService
-    private let flashcardService: FlashcardService
 
-    init(deckService: DeckService, flashcardService: FlashcardService, deck: Deck) {
+    init(deckService: DeckService, deck: DeckProtocol) {
         self.deckService = deckService
-        self.flashcardService = flashcardService
         self.deck = deck
-        self.flashcards = deck.flashcards
-    }
-    
-    func addFlashcard(question: String, answer: String) {
-        let flashcard = Flashcard(question: question, answer: answer)
-        flashcardService.add(flashcard: flashcard)
-        deckService.addFlashcard(flashcard: flashcard, deck: deck)
-        flashcards.append(flashcard)
+        self.specialCards = deck.specialCards
     }
 
 }

@@ -1,8 +1,9 @@
-class LearningService {
-    private let spacedRepetitionStrategy: SpacedRepetitionStrategy
+struct LearningService {
+    private let spacedRepetitionFactory = StrategyFactory()
     
-    init(spacedRepetitionStrategy: StrategyFactory) {
-        self.spacedRepetitionStrategy = spacedRepetitionStrategy.createStrategy()
+    func doSomething(deckType: DeckProtocol.Type) {
+        let strategy = StrategyFactory.getStrategy(type: deckType)
+        strategy.doSomething()
     }
     
 }

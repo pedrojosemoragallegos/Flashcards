@@ -1,7 +1,7 @@
 import Foundation
 
 class InMemoryDeckRepository: DeckRepositoryProtocol {
-    typealias Model = Deck
+    typealias Model = DeckProtocol
     
     var decks = [UUID: Model]()
 
@@ -10,11 +10,17 @@ class InMemoryDeckRepository: DeckRepositoryProtocol {
         decks[deck.id!] = deck
     }
     
+    func create(models: [DeckProtocol]) {
+        models.forEach { model in
+            create(model: model)
+        }
+    }
+    
     func get(byID id: UUID) -> Model? {
         return decks[id]
     }
     
-    func getAll() -> [Deck] {
+    func getAll() -> [DeckProtocol] {
         return Array(decks.values)
     }
     
@@ -36,12 +42,19 @@ class InMemoryDeckRepository: DeckRepositoryProtocol {
         }
     }
     
-    func addFlashcard(flashcard: Flashcard, deck: Deck) {
-        if flashcard.id != nil, deck.id != nil {
-            deck.flashcards.append(flashcard)
-            flashcard.decks.append(deck)
+    func addSpecialCard(specialCard: SpecialCardProtocol, deck: DeckProtocol) {
+        if specialCard.flashcard.id != nil, deck.id != nil {
+            deck.specialCards.append(specialCard)
+            specialCard.flashcard.decks.append(deck)
         } else {
             fatalError("Implement correct error, but you can't add items never stored.")
         }
     }
+    
+    func addSpecialCards(specialCards: [SpecialCardProtocol], deck: DeckProtocol) {
+        for specialCard in specialCards {
+            addSpecialCard(specialCard: specialCard, deck: deck)
+        }
+    }
+    
 }

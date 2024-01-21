@@ -7,11 +7,18 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(viewModel.decks, id: \.id) { deck in
-                NavigationLink(destination: DeckFlashcardsView(viewModel: DeckFlashcardsViewModel(deckService: serviceContainer.deckService, flashcardService: serviceContainer.flashCardService, deck: deck))) {
+                NavigationLink(destination: DeckFlashcardsView(viewModel: DeckFlashcardsViewModel(deckService: serviceContainer.deckService, deck: deck))) {
                     HStack {
-                        Text("\(deck.name)")
+                        VStack(alignment: .leading) {
+                            Text(deck.name)
+                                .font(.headline)
+                            Text(deck.algorithmName)
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                        }
                         Spacer()
-                        Text("\(deck.flashcards.count)")
+                        Text("\(deck.specialCards.count)")
+                            .font(.subheadline) 
                     }
                 }
             }

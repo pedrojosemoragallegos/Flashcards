@@ -16,30 +16,33 @@ class ServiceContainer: ObservableObject {
     }
     
     private func createMockData() {
-        let deck1 = Deck(name: "English Vocabs")
-        let flashcard11 = Flashcard(question: "Dog", answer: "Hund")
-        let flashcard12 = Flashcard(question: "Cat", answer: "Katze")
-        let flashcard13 = Flashcard(question: "House", answer: "Haus")
+        let deck1 = DeckFactory.createStrategy(.leitnerSystem(name: "Englisch Vocabs", numberOfBoxes: 5))()
+        let deck2 = DeckFactory.createStrategy(.leitnerSystem(name: "Machine Learning", numberOfBoxes: 10))()
+        let deck3 = DeckFactory.createStrategy(.ankiAlgorithm(name: "Physics"))()
+                
+        deckService.add(decks: [deck1, deck2, deck3])
         
-        deckService.add(deck: deck1)
-        flashCardService.add(flashcard: flashcard11)
-        flashCardService.add(flashcard: flashcard12)
-        flashCardService.add(flashcard: flashcard13)
+        let flashcards1 = [
+            Flashcard(question: "Dog", answer: "Hund"),
+            Flashcard(question: "Cat", answer: "Katze"),
+            Flashcard(question: "House", answer: "Haus")
+        ]
         
-        deckService.addFlashcard(flashcard: flashcard11, deck: deck1)
-        deckService.addFlashcard(flashcard: flashcard12, deck: deck1)
-        deckService.addFlashcard(flashcard: flashcard13, deck: deck1)
+        let flashcards2 = [
+            Flashcard(question: "What is a Neuron?", answer: "A neuron is..."),
+            Flashcard(question: "What is a Loss-Function?", answer: "A Loss-Function is...")
+        ]
         
-        let deck2 = Deck(name: "Machine Learning")
-        let flashcard21 = Flashcard(question: "What is a Neuron?", answer: "A neuron is...")
-        let flashcard22 = Flashcard(question: "What is a Loss-Function?", answer: "A Loss-Function is...")
+        let flashcards3 = [
+            Flashcard(question: "What is a black hole", answer: "I don't know")
+        ]
         
-        deckService.add(deck: deck2)
-        flashCardService.add(flashcard: flashcard21)
-        flashCardService.add(flashcard: flashcard22)
+        flashCardService.add(flashcards: flashcards1 + flashcards2 + flashcards3)
         
-        deckService.addFlashcard(flashcard: flashcard21, deck: deck2)
-        deckService.addFlashcard(flashcard: flashcard22, deck: deck2)
+        deckService.addFlashcards(flashcards: flashcards1, deck: deck1)
+        deckService.addFlashcards(flashcards: flashcards2, deck: deck2)
+        deckService.addFlashcards(flashcards: flashcards3, deck: deck3)
+
     }
 
 }

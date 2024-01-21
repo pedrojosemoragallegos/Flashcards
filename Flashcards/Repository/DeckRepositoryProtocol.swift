@@ -1,3 +1,3 @@
-protocol DeckRepositoryProtocol: RepositoryProtocol where Model == Deck {
-    func addFlashcard(flashcard: Flashcard, deck: Deck)
+protocol DeckRepositoryProtocol: RepositoryProtocol where Model == DeckProtocol {
+    func addSpecialCard(specialCard: SpecialCardProtocol, deck: DeckProtocol)
 }

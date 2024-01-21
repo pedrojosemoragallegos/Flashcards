@@ -13,6 +13,6 @@ class FlashcardViewModel: ObservableObject {
     func addFlashcard(question: String, answer: String) {
         let flashcard = Flashcard(question: question, answer: answer)
         service.add(flashcard: flashcard)
-        flashcards.append(flashcard)
+        flashcards = service.getAll()
     }
 }

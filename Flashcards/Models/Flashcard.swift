@@ -1,30 +1,19 @@
 import Foundation
 
-class Flashcard: CustomStringConvertible {
+class Flashcard {
     var id: UUID?
     var question: String
     var answer: String
-    var decks = [Deck]()
+    var decks = [DeckProtocol]()
     
-    init(
-        question: String,
-        answer: String
-    ) {
+    init(question: String, answer: String) {
         self.question = question
         self.answer = answer
     }
     
-    convenience init(
-        question: String,
-        answer: String,
-        decks: [Deck]
-    ) {
+    convenience init(question: String, answer: String, decks: [DeckProtocol]) {
         self.init(question: question, answer: answer)
         self.decks += decks
-    }
-    
-    var description: String {
-        return "Flashcard(\(id!), question: \(question), answer: \(answer), decks: \(decks)"
     }
     
 }

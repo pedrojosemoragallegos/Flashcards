@@ -10,6 +10,12 @@ class InMemoryFlashcardRepository: FlashcardRepositoryProtocol {
         flashcards[flashcard.id!] = flashcard
     }
     
+    func create(models: [Flashcard]) {
+        models.forEach { model in
+            create(model: model)
+        }
+    }
+    
     func get(byID id: UUID) -> Model? {
         return flashcards[id]
     }
@@ -33,15 +39,6 @@ class InMemoryFlashcardRepository: FlashcardRepositoryProtocol {
             return true
         } else {
             fatalError("Implement correct error, but you can't delete a flashcard never stored.")
-        }
-    }
-    
-    func addDeck(deck: Deck, flashcard: Flashcard) {
-        if deck.id != nil, flashcard.id != nil {
-            flashcard.decks.append(deck)
-            deck.flashcards.append(flashcard)
-        } else {
-            fatalError("Implement correct error, but you can't add items never stored.")
         }
     }
     

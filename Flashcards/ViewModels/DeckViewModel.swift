@@ -1,19 +1,13 @@
 import Foundation
 
 class DeckViewModel: ObservableObject {
-    @Published var decks: [Deck] = []
+    @Published var decks: [DeckProtocol] = []
 
-    private let deckService: DeckService
+    private let service: DeckService
 
     init(deckService: DeckService) {
-        self.deckService = deckService
-        decks = deckService.getAll()
-    }
-    
-    func addDeck(name: String) {
-        let deck = Deck(name: name)
-        deckService.add(deck: deck)
-        decks.append(deck)
+        self.service = deckService
+        decks = service.getAll()
     }
     
 }
