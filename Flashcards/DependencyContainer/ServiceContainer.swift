@@ -5,14 +5,12 @@ class ServiceContainer: ObservableObject {
     let flashCardService: FlashcardService
     private let deckRepository: any DeckRepositoryProtocol
     let deckService: DeckService
-    let learningService: LearningService
 
     init(mockData: Bool = true) {
         flashcardRepository = InMemoryFlashcardRepository()
         flashCardService = FlashcardService(repository: flashcardRepository)
         deckRepository = InMemoryDeckRepository()
         deckService = DeckService(repository: deckRepository)
-        learningService = LearningService()
         
         if mockData { createMockData() }
     }
