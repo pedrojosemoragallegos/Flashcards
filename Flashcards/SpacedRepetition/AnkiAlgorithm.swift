@@ -1,9 +1,10 @@
 import Foundation
 
 struct AnkiAlgorithm: SpacedRepetitionProtocol {
-    static func doSomething() {
-        
-    }
+    typealias SpecialCardProtocol = AnkiAlgorithmCard
     
+    static func updateCard(specialCard: AnkiAlgorithmCard) {
+        specialCard.flashcard.question = "CHANGED"
+    }
     
 }

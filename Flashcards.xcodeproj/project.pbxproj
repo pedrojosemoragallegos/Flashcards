@@ -35,7 +35,6 @@
 		EEE6CB792B5D1AB60049A08F /* AnkiAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6CB782B5D1AB60049A08F /* AnkiAlgorithm.swift */; };
 		EEE6CB7C2B5D1AED0049A08F /* AnkiAlgorithmDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6CB7B2B5D1AED0049A08F /* AnkiAlgorithmDeck.swift */; };
 		EEE6CB7E2B5D1AF50049A08F /* AnkiAlgorithmCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6CB7D2B5D1AF50049A08F /* AnkiAlgorithmCard.swift */; };
-		EEE6CB802B5D1BE20049A08F /* StrategyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE6CB7F2B5D1BE20049A08F /* StrategyFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +68,6 @@
 		EEE6CB782B5D1AB60049A08F /* AnkiAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkiAlgorithm.swift; sourceTree = "<group>"; };
 		EEE6CB7B2B5D1AED0049A08F /* AnkiAlgorithmDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkiAlgorithmDeck.swift; sourceTree = "<group>"; };
 		EEE6CB7D2B5D1AF50049A08F /* AnkiAlgorithmCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkiAlgorithmCard.swift; sourceTree = "<group>"; };
-		EEE6CB7F2B5D1BE20049A08F /* StrategyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				EE95DB4B2B502A9E007D930A /* SpacedRepetitionProtocol.swift */,
-				EEE6CB7F2B5D1BE20049A08F /* StrategyFactory.swift */,
 				EE95DB4D2B502D78007D930A /* LeitnerSystem.swift */,
 				EEE6CB782B5D1AB60049A08F /* AnkiAlgorithm.swift */,
 			);
@@ -326,7 +323,6 @@
 				EE95DB4E2B502D78007D930A /* LeitnerSystem.swift in Sources */,
 				EEE6CB7E2B5D1AF50049A08F /* AnkiAlgorithmCard.swift in Sources */,
 				EE95DB3B2B502753007D930A /* FlashcardsApp.swift in Sources */,
-				EEE6CB802B5D1BE20049A08F /* StrategyFactory.swift in Sources */,
 				EE49B4E62B51BC3300A5B699 /* DataSourceProtocol.swift in Sources */,
 				EE49B4E02B519C0400A5B699 /* InMemoryFlashcardRepository.swift in Sources */,
 				EEE6CB792B5D1AB60049A08F /* AnkiAlgorithm.swift in Sources */,

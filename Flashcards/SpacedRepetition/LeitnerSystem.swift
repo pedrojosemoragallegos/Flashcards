@@ -1,8 +1,10 @@
 import Foundation
 
 struct LeitnerSystem: SpacedRepetitionProtocol {
-    static func doSomething() {
-        
+    typealias SpecialCardProtocol = LeitnerSystemCard
+    
+    static func updateCard(specialCard: LeitnerSystemCard) {
+        specialCard.flashcard.question = "CHANGED"
     }
     
 }

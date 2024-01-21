@@ -25,8 +25,20 @@ struct DeckFlashcardsView: View {
                     Spacer()
                 }
             }
-            .padding(.vertical) // Adds some vertical padding for better spacing
+            Button(action: {
+                //never call it like that but its for testing
+                serviceContainer.learningService.updateCard(flashcard: specialCard)
+            }) {
+                Text("Perform Action")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding(.vertical)
         }
         .navigationTitle(viewModel.deck.name)
     }
 }
+

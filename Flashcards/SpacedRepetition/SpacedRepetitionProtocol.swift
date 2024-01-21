@@ -1,5 +1,7 @@
 import Foundation
 
 protocol SpacedRepetitionProtocol {
-    static func doSomething()
+    associatedtype SpecialCardProtocol
+    
+    static func updateCard(specialCard: SpecialCardProtocol)
 }
