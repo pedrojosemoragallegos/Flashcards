@@ -7,7 +7,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(viewModel.decks, id: \.id) { deck in
-                NavigationLink(destination: DeckFlashcardsView(viewModel: DeckFlashcardsViewModel(deckService: serviceContainer.deckService, deck: deck))) {
+                NavigationLink(destination: DeckFlashcardsView(viewModel: DeckFlashcardsViewModel(deckService: serviceContainer.ankiDeckService, deck: deck))) {
                     HStack {
                         VStack(alignment: .leading) {
                             Text(deck.name)

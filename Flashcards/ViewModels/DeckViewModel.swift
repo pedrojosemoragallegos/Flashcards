@@ -3,12 +3,11 @@ import Foundation
 class DeckViewModel<DeckType: DeckProtocol>: ObservableObject {
     @Published var decks: [DeckType] = []
 
-    private let service: DeckService<InMemoryDeckRepository<DeckType, DeckType.SpecialCardType>>
+    private let service: GenericDeckService<DeckType, InMemoryDeckRepository<DeckType, DeckType.SpecialCardType>>
 
-    init(deckService: DeckService<InMemoryDeckRepository<DeckType, DeckType.SpecialCardType>>) {
+    init(deckService: GenericDeckService<DeckType, InMemoryDeckRepository<DeckType, DeckType.SpecialCardType>>) {
         self.service = deckService
         decks = service.getAll()
-    
     }
 }
 

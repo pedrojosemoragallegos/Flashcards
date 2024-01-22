@@ -28,13 +28,13 @@ class ServiceContainer: ObservableObject {
         leitnerDeckService.add(deck: deck1)
         leitnerDeckService.add(deck: deck2)
         ankiDeckService.add(deck: deck3)
-
         
         let flashcards1 = [
             Flashcard(question: "Dog", answer: "Hund"),
             Flashcard(question: "Cat", answer: "Katze"),
             Flashcard(question: "House", answer: "Haus")
         ]
+        
         
         let flashcards2 = [
             Flashcard(question: "What is a Neuron?", answer: "A neuron is.."),
@@ -46,6 +46,11 @@ class ServiceContainer: ObservableObject {
         ]
         
         flashcardService.add(flashcards: flashcards1 + flashcards2 + flashcards3)
+        
+        leitnerDeckService.addFlashcards(flashcards: flashcards1, deck: deck1)
+        leitnerDeckService.addFlashcards(flashcards: flashcards2, deck: deck2)
+        ankiDeckService.addFlashcards(flashcards: flashcards3, deck: deck3)
+
 
     }
 

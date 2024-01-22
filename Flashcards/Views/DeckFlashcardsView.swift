@@ -3,7 +3,7 @@ import SwiftUI
 struct DeckFlashcardsView: View {
     @Environment(\.serviceContainer) var serviceContainer: ServiceContainer
     @ObservedObject var viewModel: DeckFlashcardsViewModel<AnkiAlgorithmDeck>
-    @State private var selectedCards: [UUID: Bool] = [:]
+    @State private var selectedCards: [UUID: Bool] = [:] // State variable to track selected cards
 
     var body: some View {
         List(viewModel.specialCards, id: \.id) { specialCard in
@@ -13,18 +13,18 @@ struct DeckFlashcardsView: View {
                     .foregroundColor(.secondary)
                 
                 HStack {
-                    Text(specialCard.flashcard.question)
+                    Text(specialCard.flashcard.question) // Assuming specialCard has a flashcard property
                     Spacer()
                 }
                 
-                if selectedCards[specialCard.id, default: false] {
+                if selectedCards[specialCard.id!, default: false] {
                     Text(specialCard.flashcard.answer)
-                        .foregroundColor(.gray) 
+                        .foregroundColor(.gray)
                 }
             }
             .onTapGesture {
                 withAnimation {
-                    selectedCards[specialCard.id] = !(selectedCards[specialCard.id] ?? false)
+                    selectedCards[specialCard.id!] = !(selectedCards[specialCard.id!] ?? false)
                 }
             }
             .padding(.vertical)
