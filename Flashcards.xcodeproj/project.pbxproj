@@ -10,6 +10,8 @@
 		EE49B4E62B51BC3300A5B699 /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE49B4E52B51BC3300A5B699 /* DataSourceProtocol.swift */; };
 		EE59F55C2B5E2AE70013A209 /* InMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59F55B2B5E2AE70013A209 /* InMemoryRepository.swift */; };
 		EE59F55E2B5E2C570013A209 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59F55D2B5E2C570013A209 /* ModelProtocol.swift */; };
+		EE59F5642B5E4E3A0013A209 /* InMemoryDeckRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59F5632B5E4E3A0013A209 /* InMemoryDeckRepository.swift */; };
+		EE59F5662B5E60AC0013A209 /* InMemoryFlashcardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59F5652B5E60AC0013A209 /* InMemoryFlashcardRepository.swift */; };
 		EE5DFE712B5934B000BF8B90 /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DFE702B5934B000BF8B90 /* ServiceContainer.swift */; };
 		EE5DFE732B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DFE722B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift */; };
 		EE5DFE762B59478E00BF8B90 /* FlashcardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */; };
@@ -40,6 +42,8 @@
 		EE49B4E52B51BC3300A5B699 /* DataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
 		EE59F55B2B5E2AE70013A209 /* InMemoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryRepository.swift; sourceTree = "<group>"; };
 		EE59F55D2B5E2C570013A209 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
+		EE59F5632B5E4E3A0013A209 /* InMemoryDeckRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryDeckRepository.swift; sourceTree = "<group>"; };
+		EE59F5652B5E60AC0013A209 /* InMemoryFlashcardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFlashcardRepository.swift; sourceTree = "<group>"; };
 		EE5DFE702B5934B000BF8B90 /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
 		EE5DFE722B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardRepositoryProtocol.swift; sourceTree = "<group>"; };
 		EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewModel.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				EE59F55B2B5E2AE70013A209 /* InMemoryRepository.swift */,
+				EE59F5632B5E4E3A0013A209 /* InMemoryDeckRepository.swift */,
+				EE59F5652B5E60AC0013A209 /* InMemoryFlashcardRepository.swift */,
 			);
 			path = InMemory;
 			sourceTree = "<group>";
@@ -300,9 +306,11 @@
 				EE76992D2B59541F005EB7FC /* DeckRepositoryProtocol.swift in Sources */,
 				EEE5ABB52B5064A500DC56CE /* DeckProtocol.swift in Sources */,
 				EEE5ABB82B5065A000DC56CE /* SpecialCardProtocol.swift in Sources */,
+				EE59F5642B5E4E3A0013A209 /* InMemoryDeckRepository.swift in Sources */,
 				EEE5ABB22B50633C00DC56CE /* LeitnerSystemCard.swift in Sources */,
 				EEE6CB7C2B5D1AED0049A08F /* AnkiAlgorithmDeck.swift in Sources */,
 				EEE5ABC12B5071B600DC56CE /* RepositoryProtocol.swift in Sources */,
+				EE59F5662B5E60AC0013A209 /* InMemoryFlashcardRepository.swift in Sources */,
 				EE76994E2B599F24005EB7FC /* DeckFlashcardsView.swift in Sources */,
 				EE59F55C2B5E2AE70013A209 /* InMemoryRepository.swift in Sources */,
 				EEA633EE2B5C18590082F3D0 /* DeckFlashcardsViewModel.swift in Sources */,

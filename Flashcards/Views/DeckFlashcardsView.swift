@@ -2,7 +2,7 @@ import SwiftUI
 
 struct DeckFlashcardsView: View {
     @Environment(\.serviceContainer) var serviceContainer: ServiceContainer
-    @ObservedObject var viewModel: DeckFlashcardsViewModel
+    @ObservedObject var viewModel: DeckFlashcardsViewModel<AnkiAlgorithmDeck>
     @State private var selectedCards: [UUID: Bool] = [:]
 
     var body: some View {

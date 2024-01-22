@@ -1,11 +1,11 @@
 import Foundation
 
-class FlashcardViewModel: ObservableObject {
+class FlashcardViewModel<Repository: FlashcardRepositoryProtocol>: ObservableObject where Repository.ModelType == Flashcard {
     @Published var flashcards: [Flashcard] = []
 
-    private let service: FlashcardService
+    private let service: FlashcardService<Repository>
 
-    init(service: FlashcardService) {
+    init(service: FlashcardService<Repository>) {
         self.service = service
         flashcards = service.getAll()
     }

@@ -17,7 +17,7 @@ struct FlashcardsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: DeckViewModel(deckService: serviceContainer.deckService))
+            ContentView(viewModel: DeckViewModel<AnkiAlgorithmDeck>(deckService: serviceContainer.ankiAlgorithmDeckService))
                 .environment(\.serviceContainer, serviceContainer)
         }
     }

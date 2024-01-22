@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.serviceContainer) var serviceContainer: ServiceContainer
-    @ObservedObject var viewModel: DeckViewModel
+    @ObservedObject var viewModel: DeckViewModel<AnkiAlgorithmDeck>
 
     var body: some View {
         NavigationView {
