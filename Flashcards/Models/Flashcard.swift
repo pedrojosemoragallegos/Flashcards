@@ -1,12 +1,10 @@
 import Foundation
 
-class Flashcard: ModelProtocol {
-    typealias DeckType = DeckProtocol
-    
+class Flashcard: FlashcardProtocol {
     var id: UUID?
     var question: String
     var answer: String
-    var decks = [any DeckType]()
+    var decks = [any DeckProtocol]()
     
     init(question: String, answer: String) {
         self.question = question

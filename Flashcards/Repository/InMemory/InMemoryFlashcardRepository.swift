@@ -1,4 +1,4 @@
-class InMemoryFlashcardRepository: InMemoryRepository<Flashcard>, FlashcardRepositoryProtocol {
+class InMemoryFlashcardRepository: GenericInMemoryRepository<Flashcard>, FlashcardRepositoryProtocol {
     typealias ModelType = Flashcard
     
 }

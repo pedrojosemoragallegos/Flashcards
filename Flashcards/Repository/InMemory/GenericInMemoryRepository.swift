@@ -1,6 +1,6 @@
 import Foundation
 
-class InMemoryRepository<T: ModelProtocol>: RepositoryProtocol {
+class GenericInMemoryRepository<T: ModelProtocol>: RepositoryProtocol {
     typealias ModelType = T
     
     var items = [UUID: T]()
@@ -41,21 +41,3 @@ class InMemoryRepository<T: ModelProtocol>: RepositoryProtocol {
         return true
     }
 }
-
-    
-    /*
-     func addSpecialCard(specialCard: SpecialCardProtocol, deck: DeckProtocol) {
-     if specialCard.flashcard.id != nil, deck.id != nil {
-     deck.specialCards.append(specialCard)
-     specialCard.flashcard.decks.append(deck)
-     } else {
-     fatalError("Implement correct error, but you can't add items never stored.")
-     }
-     }
-     
-     func addSpecialCards(specialCards: [SpecialCardProtocol], deck: DeckProtocol) {
-     for specialCard in specialCards {
-     addSpecialCard(specialCard: specialCard, deck: deck)
-     }
-     }
-     */

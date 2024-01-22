@@ -1,24 +1,19 @@
 import Foundation
 
 class ServiceContainer: ObservableObject {
-    private let ankiAlorithmDeckRepository: InMemoryDeckRepository<AnkiAlgorithmDeck, AnkiAlgorithmCard>
-    let ankiAlgorithmDeckService: DeckService<InMemoryDeckRepository<AnkiAlgorithmDeck, AnkiAlgorithmCard>>
-    
-    private let leitnerSystemDeckRepository: InMemoryDeckRepository<LeitnerSystemDeck, LeitnerSystemCard>
-    let leitnerSystemDeckService: DeckService<InMemoryDeckRepository<LeitnerSystemDeck, LeitnerSystemCard>>
-    
-    private let flashcardRepository: InMemoryFlashcardRepository
-    let flashcardService: FlashcardService<InMemoryFlashcardRepository>
-    
+    let ankiDeckService: GenericDeckService<AnkiAlgorithmDeck, InMemoryDeckRepository<AnkiAlgorithmDeck, AnkiAlgorithmCard>>
+    let leitnerDeckService: GenericDeckService<LeitnerSystemDeck, InMemoryDeckRepository<LeitnerSystemDeck, LeitnerSystemCard>>
+    let flashcardService: GenericFlashcardService<InMemoryFlashcardRepository>
+
     init(mockData: Bool = true) {
-        self.ankiAlorithmDeckRepository = InMemoryDeckRepository<AnkiAlgorithmDeck, AnkiAlgorithmCard>()
-        self.ankiAlgorithmDeckService = DeckService(repository: ankiAlorithmDeckRepository)
+        let ankiDeckRepository = InMemoryDeckRepository<AnkiAlgorithmDeck, AnkiAlgorithmCard>()
+        let leitnerDeckRepository = InMemoryDeckRepository<LeitnerSystemDeck, LeitnerSystemCard>()
+        let flashcardRepository = InMemoryFlashcardRepository()
+
+        ankiDeckService = GenericDeckService(repository: ankiDeckRepository)
+        leitnerDeckService = GenericDeckService(repository: leitnerDeckRepository)
+        flashcardService = GenericFlashcardService(repository: flashcardRepository)
         
-        self.leitnerSystemDeckRepository = InMemoryDeckRepository<LeitnerSystemDeck, LeitnerSystemCard>()
-        self.leitnerSystemDeckService = DeckService(repository: leitnerSystemDeckRepository)
-        
-        self.flashcardRepository = InMemoryFlashcardRepository()
-        self.flashcardService = FlashcardService(repository: flashcardRepository)
         
         if mockData {
             createMockData()
@@ -26,13 +21,14 @@ class ServiceContainer: ObservableObject {
     }
     
     func createMockData() {
-        let deck1 = DeckFactory.createDeck(type: .leitnerSystem(name: "English Vocabs", numberOfBoxes: 5))
-        let deck2 = DeckFactory.createDeck(type: .leitnerSystem(name: "Machine Learning", numberOfBoxes: 10))
-        let deck3 = DeckFactory.createDeck(type: .ankiAlgorithm(name: "Physics"))
+        let deck1 = LeitnerSystemDeck(name: "English Vocbas", numberOfBoxes: 5)
+        let deck2 = LeitnerSystemDeck(name: "Machine Learning", numberOfBoxes: 10)
+        let deck3 = AnkiAlgorithmDeck(name: "Physics")
         
-        leitnerSystemDeckService.add(deck: deck1 as! InMemoryRepository<LeitnerSystemDeck>.ModelType)
-        leitnerSystemDeckService.add(deck: deck2 as! InMemoryRepository<LeitnerSystemDeck>.ModelType)
-        ankiAlgorithmDeckService.add(deck: deck3 as! InMemoryRepository<AnkiAlgorithmDeck>.ModelType)
+        leitnerDeckService.add(deck: deck1)
+        leitnerDeckService.add(deck: deck2)
+        ankiDeckService.add(deck: deck3)
+
         
         let flashcards1 = [
             Flashcard(question: "Dog", answer: "Hund"),
@@ -50,12 +46,7 @@ class ServiceContainer: ObservableObject {
         ]
         
         flashcardService.add(flashcards: flashcards1 + flashcards2 + flashcards3)
-        
-        leitnerSystemDeckService.addFlashcards(flashcards: flashcards1, deck: deck1 as! InMemoryRepository<LeitnerSystemDeck>.ModelType)
-        leitnerSystemDeckService.addFlashcards(flashcards: flashcards2, deck: deck2 as! InMemoryRepository<LeitnerSystemDeck>.ModelType)
-        ankiAlgorithmDeckService.addFlashcards(flashcards: flashcards3, deck: deck3 as! InMemoryRepository<AnkiAlgorithmDeck>.ModelType)
 
-        
     }
-    
+
 }

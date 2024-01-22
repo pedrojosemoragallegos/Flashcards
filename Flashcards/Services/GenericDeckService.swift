@@ -1,22 +1,6 @@
 import Foundation
 
-enum DeckType {
-    case leitnerSystem(name: String, numberOfBoxes: Int)
-    case ankiAlgorithm(name: String)
-}
-
-struct DeckFactory {
-    static func createDeck(type: DeckType) -> any DeckProtocol {
-        switch type {
-        case .leitnerSystem(let name, let numberOfBoxes):
-            return LeitnerSystemDeck(name: name, numberOfBoxes: numberOfBoxes)
-        case .ankiAlgorithm(let name):
-            return AnkiAlgorithmDeck(name: name)
-        }
-    }
-}
-
-class DeckService<Repository: DeckRepositoryProtocol>: ObservableObject where Repository.ModelType: DeckProtocol, Repository.ModelType.SpecialCardType == Repository.CardType {
+class GenericDeckService<Deck: DeckProtocol, Repository: DeckRepositoryProtocol> where Repository.ModelType == Deck {
     private let repository: Repository
     
     init(repository: Repository) {
@@ -51,7 +35,7 @@ class DeckService<Repository: DeckRepositoryProtocol>: ObservableObject where Re
       
     func addFlashcard(flashcard: Flashcard, deck: Repository.ModelType) {
         let specialCard = Repository.ModelType.createSpecialCard(flashcard: flashcard)
-        repository.addSpecialCard(specialCard: specialCard, deck: deck)
+        repository.addSpecialCard(specialCard: specialCard as! Repository.CardType, deck: deck)
     }
     
     func addFlashcards(flashcards: [Flashcard], deck: Repository.ModelType) {

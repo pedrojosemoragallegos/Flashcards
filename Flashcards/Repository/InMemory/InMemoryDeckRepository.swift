@@ -1,4 +1,4 @@
-class InMemoryDeckRepository<T: DeckProtocol, CardType: SpecialCardProtocol>: InMemoryRepository<T>, DeckRepositoryProtocol where T: ModelProtocol {
+class InMemoryDeckRepository<T: DeckProtocol, CardType: SpecialCardProtocol>: GenericInMemoryRepository<T>, DeckRepositoryProtocol where T: ModelProtocol, T.SpecialCardType: SpecialCardProtocol {
     typealias ModelType = T
     typealias CardType = CardType
     
