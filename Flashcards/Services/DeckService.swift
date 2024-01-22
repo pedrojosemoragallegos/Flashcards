@@ -1,24 +1,13 @@
 import Foundation
 
-struct SpecialCardFactory {
-    static func create(type: DeckProtocol.Type, flashcard: Flashcard) -> SpecialCardProtocol {
-        switch type {
-        case is LeitnerSystemDeck.Type:
-            return LeitnerSystemCard(flashcard: flashcard, currentBox: 0)
-        case is AnkiAlgorithmDeck.Type:
-            return AnkiAlgorithmCard(flashcard: flashcard)
-        default:
-            fatalError("Unknown algorithm type")
-        }
-    }
-}
-
-enum DeckFactory {
+enum DeckType {
     case leitnerSystem(name: String, numberOfBoxes: Int)
     case ankiAlgorithm(name: String)
+}
 
-    func createStrategy() -> DeckProtocol {
-        switch self {
+struct DeckFactory {
+    static func createDeck(type: DeckType) -> any DeckProtocol {
+        switch type {
         case .leitnerSystem(let name, let numberOfBoxes):
             return LeitnerSystemDeck(name: name, numberOfBoxes: numberOfBoxes)
         case .ankiAlgorithm(let name):
@@ -27,47 +16,47 @@ enum DeckFactory {
     }
 }
 
-class DeckService: ObservableObject {
-    private let repository: any DeckRepositoryProtocol
+class DeckService<Repository: DeckRepositoryProtocol>: ObservableObject where Repository.ModelType: DeckProtocol, Repository.ModelType.SpecialCardType == Repository.CardType {
+    private let repository: Repository
     
-    init(repository: any DeckRepositoryProtocol) {
+    init(repository: Repository) {
         self.repository = repository
     }
     
-    func add(deck: DeckProtocol) {
+    func add(deck: Repository.ModelType) {
         repository.create(model: deck)
     }
     
-    func add(decks: [DeckProtocol]) {
+    func add(decks: [Repository.ModelType]) {
         decks.forEach { deck in
             add(deck: deck)
         }
     }
     
-    func get(byID id: UUID) -> DeckProtocol? {
+    func get(byID id: UUID) -> Repository.ModelType? {
         return repository.get(byID: id)
     }
     
-    func getAll() -> [DeckProtocol] {
+    func getAll() -> [Repository.ModelType] {
         return repository.getAll()
     }
     
-    func update(deck: DeckProtocol) -> Bool {
+    func update(deck: Repository.ModelType) -> Bool {
         return repository.update(model: deck)
     }
     
-    func delete(deck: DeckProtocol) -> Bool {
+    func delete(deck: Repository.ModelType) -> Bool {
         return repository.delete(model: deck)
     }
       
-    func addFlashcard(flashcard: Flashcard, deck: DeckProtocol) {
-        repository.addSpecialCard(specialCard: SpecialCardFactory.create(type: type(of: deck), flashcard: flashcard), deck: deck)
+    func addFlashcard(flashcard: Flashcard, deck: Repository.ModelType) {
+        let specialCard = Repository.ModelType.createSpecialCard(flashcard: flashcard)
+        repository.addSpecialCard(specialCard: specialCard, deck: deck)
     }
     
-    func addFlashcards(flashcards: [Flashcard], deck: DeckProtocol) {
+    func addFlashcards(flashcards: [Flashcard], deck: Repository.ModelType) {
         flashcards.forEach { flashcard in
             addFlashcard(flashcard: flashcard, deck: deck)
         }
     }
-    
 }

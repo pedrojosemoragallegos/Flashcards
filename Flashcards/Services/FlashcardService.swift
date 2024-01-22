@@ -1,9 +1,9 @@
 import Foundation
 
-class FlashcardService: ObservableObject {
-    private let repository: any FlashcardRepositoryProtocol
+class FlashcardService<Repository: FlashcardRepositoryProtocol>: ObservableObject where Repository.ModelType == Flashcard {
+    private let repository: Repository
     
-    init(repository: any FlashcardRepositoryProtocol) {
+    init(repository: Repository) {
         self.repository = repository
     }
     
@@ -33,14 +33,8 @@ class FlashcardService: ObservableObject {
         return repository.delete(model: flashcard)
     }
     
-    func updatePerformance(flashcard: SpecialCardProtocol, performance: PerformanceProtocol) {
-        if let leitnerCard = flashcard as? LeitnerSystemCard {
-            LeitnerSystem.updateCard(specialCard: leitnerCard, performance: performance as! LeitnerSystem.PerformanceType)
-        } else if let ankiCard = flashcard as? AnkiAlgorithmCard {
-            AnkiAlgorithm.updateCard(specialCard: ankiCard, performance: performance as! AnkiAlgorithm.PerformanceType)
-        } else {
-            fatalError("Unknown algorithm type")
-        }
+    func updatePerformance<Card: SpecialCardProtocol>(card: Card, performance: Card.PerformanceType) {
+        card.updatePerformance(performance: performance)
     }
     
 }

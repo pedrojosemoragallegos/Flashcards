@@ -1,13 +1,13 @@
 import Foundation
 
 protocol RepositoryProtocol {
-    associatedtype Model
+    associatedtype ModelType: ModelProtocol
 
-    func create(model: Model)
-    func create(models: [Model])
-    func get(byID id: UUID) -> Model?
-    func getAll() -> [Model]
-    func update(model: Model) -> Bool
-    func delete(model: Model) -> Bool
+    func create(model: ModelType)
+    func create(models: [ModelType])
+    func get(byID id: UUID) -> ModelType?
+    func getAll() -> [ModelType]
+    func update(model: ModelType) -> Bool
+    func delete(model: ModelType) -> Bool
     
 }

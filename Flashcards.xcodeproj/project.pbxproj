@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE49B4E02B519C0400A5B699 /* InMemoryFlashcardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE49B4DF2B519C0400A5B699 /* InMemoryFlashcardRepository.swift */; };
 		EE49B4E62B51BC3300A5B699 /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE49B4E52B51BC3300A5B699 /* DataSourceProtocol.swift */; };
-		EE5DFE692B59246200BF8B90 /* InMemoryDeckRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DFE682B59246200BF8B90 /* InMemoryDeckRepository.swift */; };
+		EE59F55C2B5E2AE70013A209 /* InMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59F55B2B5E2AE70013A209 /* InMemoryRepository.swift */; };
+		EE59F55E2B5E2C570013A209 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE59F55D2B5E2C570013A209 /* ModelProtocol.swift */; };
 		EE5DFE712B5934B000BF8B90 /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DFE702B5934B000BF8B90 /* ServiceContainer.swift */; };
 		EE5DFE732B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DFE722B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift */; };
 		EE5DFE762B59478E00BF8B90 /* FlashcardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */; };
@@ -37,9 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EE49B4DF2B519C0400A5B699 /* InMemoryFlashcardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFlashcardRepository.swift; sourceTree = "<group>"; };
 		EE49B4E52B51BC3300A5B699 /* DataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
-		EE5DFE682B59246200BF8B90 /* InMemoryDeckRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryDeckRepository.swift; sourceTree = "<group>"; };
+		EE59F55B2B5E2AE70013A209 /* InMemoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryRepository.swift; sourceTree = "<group>"; };
+		EE59F55D2B5E2C570013A209 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
 		EE5DFE702B5934B000BF8B90 /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
 		EE5DFE722B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardRepositoryProtocol.swift; sourceTree = "<group>"; };
 		EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewModel.swift; sourceTree = "<group>"; };
@@ -82,8 +82,7 @@
 		EE5DFE6A2B59259B00BF8B90 /* InMemory */ = {
 			isa = PBXGroup;
 			children = (
-				EE5DFE682B59246200BF8B90 /* InMemoryDeckRepository.swift */,
-				EE49B4DF2B519C0400A5B699 /* InMemoryFlashcardRepository.swift */,
+				EE59F55B2B5E2AE70013A209 /* InMemoryRepository.swift */,
 			);
 			path = InMemory;
 			sourceTree = "<group>";
@@ -131,8 +130,8 @@
 				EE5DFE6D2B59342600BF8B90 /* DependencyContainer */,
 				EE95DB532B5054DC007D930A /* Services */,
 				EE95DB4A2B5027F3007D930A /* SpacedRepetition */,
-				EEE5ABAD2B50625800DC56CE /* Models */,
 				EEE5ABBC2B50711A00DC56CE /* Repository */,
+				EEE5ABAD2B50625800DC56CE /* Models */,
 				EEE5ABC42B51070800DC56CE /* Persistence */,
 				EE95DB3E2B502755007D930A /* Assets.xcassets */,
 				EE95DB402B502755007D930A /* Flashcards.entitlements */,
@@ -189,6 +188,7 @@
 		EEE5ABAD2B50625800DC56CE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EE59F55D2B5E2C570013A209 /* ModelProtocol.swift */,
 				EEE5ABB42B5064A500DC56CE /* DeckProtocol.swift */,
 				EEE5ABB72B5065A000DC56CE /* SpecialCardProtocol.swift */,
 				EEE5ABAF2B5062F900DC56CE /* Flashcard.swift */,
@@ -304,22 +304,22 @@
 				EEE6CB7C2B5D1AED0049A08F /* AnkiAlgorithmDeck.swift in Sources */,
 				EEE5ABC12B5071B600DC56CE /* RepositoryProtocol.swift in Sources */,
 				EE76994E2B599F24005EB7FC /* DeckFlashcardsView.swift in Sources */,
+				EE59F55C2B5E2AE70013A209 /* InMemoryRepository.swift in Sources */,
 				EEA633EE2B5C18590082F3D0 /* DeckFlashcardsViewModel.swift in Sources */,
 				EE5DFE732B593A9400BF8B90 /* FlashcardRepositoryProtocol.swift in Sources */,
 				EE95DB4C2B502A9E007D930A /* SpacedRepetitionProtocol.swift in Sources */,
+				EE59F55E2B5E2C570013A209 /* ModelProtocol.swift in Sources */,
 				EE95DB3D2B502753007D930A /* ContentView.swift in Sources */,
 				EE95DB4E2B502D78007D930A /* LeitnerSystem.swift in Sources */,
 				EEE6CB7E2B5D1AF50049A08F /* AnkiAlgorithmCard.swift in Sources */,
 				EE95DB3B2B502753007D930A /* FlashcardsApp.swift in Sources */,
 				EE49B4E62B51BC3300A5B699 /* DataSourceProtocol.swift in Sources */,
-				EE49B4E02B519C0400A5B699 /* InMemoryFlashcardRepository.swift in Sources */,
 				EEE6CB792B5D1AB60049A08F /* AnkiAlgorithm.swift in Sources */,
 				EEA633F42B5C81AC0082F3D0 /* LeitnerSystemDeck.swift in Sources */,
 				EE7699292B5953B8005EB7FC /* DeckViewModel.swift in Sources */,
 				EE5DFE712B5934B000BF8B90 /* ServiceContainer.swift in Sources */,
 				EEE5ABBB2B5070CA00DC56CE /* FlashcardService.swift in Sources */,
 				EE5DFE762B59478E00BF8B90 /* FlashcardViewModel.swift in Sources */,
-				EE5DFE692B59246200BF8B90 /* InMemoryDeckRepository.swift in Sources */,
 				EEE5ABB02B5062F900DC56CE /* Flashcard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

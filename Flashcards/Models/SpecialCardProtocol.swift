@@ -1,7 +1,10 @@
 import Foundation
 
-protocol SpecialCardProtocol {
-    // var id: UUID? { get set }
-    var id: UUID { get }
+protocol SpecialCardProtocol: ModelProtocol {
+    associatedtype PerformanceType: PerformanceProtocol
+    
     var flashcard: Flashcard { get }
+    
+    func updatePerformance(performance: PerformanceType)
+    
 }

@@ -1,9 +1,12 @@
 import Foundation
 
-protocol DeckProtocol: AnyObject {
-    var id: UUID? { get set }
+protocol DeckProtocol: ModelProtocol {
+    associatedtype SpecialCardType: SpecialCardProtocol
+    
     var name: String { get }
-    var specialCards: [SpecialCardProtocol] { get set }
+    var specialCards: [SpecialCardType] { get set }
     var algorithmName: String { get }
+    
+    //static func createSpecialCard(flashcard: Flashcard) -> SpecialCardType
+    
 }
-

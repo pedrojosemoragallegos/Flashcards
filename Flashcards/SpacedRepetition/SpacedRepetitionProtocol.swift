@@ -1,10 +1,10 @@
 import Foundation
 
-protocol PerformanceProtocol {}
+protocol PerformanceProtocol {
+    
+}
 
 protocol SpacedRepetitionProtocol {
-    associatedtype SpecialCardType
-    associatedtype PerformanceType
-    
-    static func updateCard(specialCard: SpecialCardType, performance: PerformanceType)
+    associatedtype SpecialCardType: SpecialCardProtocol
+    associatedtype PerformanceType: PerformanceProtocol
 }
