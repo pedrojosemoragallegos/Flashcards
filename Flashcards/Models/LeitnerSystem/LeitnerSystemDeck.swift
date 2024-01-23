@@ -1,9 +1,9 @@
 import Foundation
 
-class LeitnerSystemDeck: DeckProtocol {
+class LeitnerSystemDeck: DeckProtocol  {
     typealias SpecialCardType = LeitnerSystemCard
         
-    var id: UUID?
+    var id = UUID() // TODO: change it, its just for now!!! it should be optional
     var name: String
     let numberOfBoxes: Int
     var specialCards = [LeitnerSystemCard]()

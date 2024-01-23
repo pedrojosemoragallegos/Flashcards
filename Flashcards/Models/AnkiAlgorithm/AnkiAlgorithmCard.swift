@@ -9,7 +9,7 @@ enum AnkiAlgorithmPerformance: PerformanceProtocol {
 class AnkiAlgorithmCard: SpecialCardProtocol {
     typealias PerformanceType = AnkiAlgorithmPerformance
     
-    var id: UUID?
+    var id = UUID() // TODO: change it, its just for now!!! it should be optional
     var flashcard: Flashcard
     
     init(flashcard: Flashcard) {

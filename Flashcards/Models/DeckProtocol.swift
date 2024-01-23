@@ -1,6 +1,6 @@
 import Foundation
 
-protocol DeckProtocol: ModelProtocol {
+protocol DeckProtocol: ModelProtocol where SpecialCardType: SpecialCardProtocol {
     associatedtype SpecialCardType: SpecialCardProtocol
     
     var name: String { get }

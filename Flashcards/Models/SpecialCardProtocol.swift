@@ -1,6 +1,6 @@
 import Foundation
 
-protocol SpecialCardProtocol: ModelProtocol {
+protocol SpecialCardProtocol: ModelProtocol where PerformanceType: PerformanceProtocol {
     associatedtype PerformanceType: PerformanceProtocol
     
     var flashcard: Flashcard { get }

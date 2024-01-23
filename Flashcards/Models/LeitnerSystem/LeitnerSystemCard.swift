@@ -8,7 +8,7 @@ enum LeitnerSystemPerformance: PerformanceProtocol {
 class LeitnerSystemCard: SpecialCardProtocol {
     typealias PerformanceType = LeitnerSystemPerformance
     
-    var id: UUID?
+    var id = UUID() // TODO: change it, its just for now!!! it should be optional
     let flashcard: Flashcard
     var currentBox: Int
     
