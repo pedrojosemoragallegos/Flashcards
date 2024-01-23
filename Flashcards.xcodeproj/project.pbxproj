@@ -116,8 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				EE7699282B5953B8005EB7FC /* DeckViewModel.swift */,
-				EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */,
-				EEA633ED2B5C18590082F3D0 /* DeckFlashcardsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -125,6 +123,9 @@
 		EE95DB2E2B502753007D930A = {
 			isa = PBXGroup;
 			children = (
+				EE76994D2B599F24005EB7FC /* DeckFlashcardsView.swift */,
+				EE5DFE752B59478E00BF8B90 /* FlashcardViewModel.swift */,
+				EEA633ED2B5C18590082F3D0 /* DeckFlashcardsViewModel.swift */,
 				EE95DB392B502753007D930A /* Flashcards */,
 				EE95DB382B502753007D930A /* Products */,
 			);
@@ -169,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				EE95DB3C2B502753007D930A /* ContentView.swift */,
-				EE76994D2B599F24005EB7FC /* DeckFlashcardsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -1,4 +1,4 @@
-import Foundation
+/*import Foundation
 
 class FlashcardViewModel: ObservableObject {
     @Published var flashcards: [Flashcard] = []
@@ -16,4 +16,4 @@ class FlashcardViewModel: ObservableObject {
         flashcards = service.getAll()
     }
 }
-
+ */

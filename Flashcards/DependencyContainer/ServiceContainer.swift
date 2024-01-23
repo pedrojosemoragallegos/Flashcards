@@ -16,22 +16,23 @@ class ServiceContainer: ObservableObject {
     }
     
     func createMockData() {
-        let deck1 = LeitnerSystemDeck(name: "English Vocbas", numberOfBoxes: 5)
+        /*let deck1 = LeitnerSystemDeck(name: "English Vocbas", numberOfBoxes: 5)
         let deck2 = LeitnerSystemDeck(name: "Machine Learning", numberOfBoxes: 10)
         let deck3 = AnkiAlgorithmDeck(name: "Physics")
         
         leitnerSystemDeckService.add(deck: deck1)
         leitnerSystemDeckService.add(deck: deck2)
         ankiAlgorithmDeckService.add(deck: deck3)
-        
-        let flashcards1 = [
+        */
+        /*let flashcards1 = [
             Flashcard(question: "Dog", answer: "Hund"),
             Flashcard(question: "Cat", answer: "Katze"),
             Flashcard(question: "House", answer: "Haus")
         ]
+         */
         
         
-        let flashcards2 = [
+        /*let flashcards2 = [
             Flashcard(question: "What is a Neuron?", answer: "A neuron is.."),
             Flashcard(question: "What is a Loss-Function", answer: "A Loss-Function is..")
         ]
@@ -39,12 +40,14 @@ class ServiceContainer: ObservableObject {
         let flashcards3 = [
             Flashcard(question: "What is a black hole?", answer: "I don't know")
         ]
+        */
         
-        flashcardService.add(flashcards: flashcards1 + flashcards2 + flashcards3)
+        /*flashcardService.add(flashcards: flashcards1 + flashcards2 + flashcards3)
                 
         leitnerSystemDeckService.addFlashcards(flashcards: flashcards1, deck: deck1)
         leitnerSystemDeckService.addFlashcards(flashcards: flashcards2, deck: deck2)
         ankiAlgorithmDeckService.addFlashcards(flashcards: flashcards3, deck: deck3)
+         */
     }
 
 }

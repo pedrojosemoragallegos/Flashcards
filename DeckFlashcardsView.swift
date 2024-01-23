@@ -1,4 +1,4 @@
-import SwiftUI
+/*import SwiftUI
 
 struct DeckFlashcardsView: View {
     @Environment(\.serviceContainer) var serviceContainer: ServiceContainer
@@ -31,4 +31,4 @@ struct DeckFlashcardsView: View {
         }
         .navigationTitle(viewModel.deck.name)
     }
-}
+ }*/
