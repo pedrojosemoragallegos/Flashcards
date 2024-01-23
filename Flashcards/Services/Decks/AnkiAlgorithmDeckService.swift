@@ -1,40 +1,42 @@
 import Foundation
 
-class AnkiAlgorithmDeckService: DeckServiceProtocol {
-    typealias RepositoryType = InMemoryAnkiAlgorithmRepository
-
-    var repository: InMemoryAnkiAlgorithmRepository
+class AnkiAlgorithmDeckService<Repository: DeckRepositoryProtocol>: DeckServiceProtocol {
+    typealias RepositoryType = Repository
     
-    init(repository: InMemoryAnkiAlgorithmRepository) {
+    var repository: Repository
+    
+    init(repository: RepositoryType) {
         self.repository = repository
     }
     
-    func add(deck: AnkiAlgorithmDeck) {
-        
+    func add(deck: Repository.ModelType) {
+        repository.create(model: deck)
     }
     
-    func add(decks: [AnkiAlgorithmDeck]) {
-        
+    func add(decks: [Repository.ModelType]) {
+        repository.create(models: decks)
     }
     
-    func get(byId id: UUID) -> AnkiAlgorithmDeck? {
-        return nil
+    func get(byId id: UUID) -> Repository.ModelType? {
+        return repository.get(byID: id)
     }
     
-    func getAll() -> [AnkiAlgorithmDeck] {
-        return []
+    func getAll() -> [Repository.ModelType] {
+        return repository.getAll()
     }
     
-    func delete(deck: AnkiAlgorithmDeck) -> Bool {
-        return false
+    func delete(deck: Repository.ModelType) -> Bool {
+        return repository.delete(model: deck)
     }
     
-    func addFlashcard(flashcard: Flashcard, deck: AnkiAlgorithmDeck) {
-        
+    func addFlashcard(flashcard: Repository.SpecialCard, deck: Repository.ModelType) {
+        repository.addFlashcard(specialCard: flashcard, deck: deck)
     }
     
-    func addFlashcards(flashcards: [Flashcard], deck: AnkiAlgorithmDeck) {
-        
+    func addFlashcards(flashcards: [Repository.SpecialCard], deck: Repository.ModelType) {
+        for flashcard in flashcards {
+            repository.addFlashcard(specialCard: flashcard, deck: deck)
+        }
     }
-
+    
 }

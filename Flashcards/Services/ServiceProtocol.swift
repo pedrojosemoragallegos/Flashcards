@@ -1,1 +1,3 @@
-protocol ServiceProtocol {}
+protocol ServiceProtocol {
+    
+}

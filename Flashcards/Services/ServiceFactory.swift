@@ -23,3 +23,4 @@ class ServiceFactory {
 // USAGE
 //let factory = ServiceFactory()
 //let deckService: any DeckServiceProtocol = factory.createRepository(for: .inMemoryAnkiAlgorithm)
+

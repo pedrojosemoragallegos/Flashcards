@@ -10,27 +10,26 @@ class FlashcardService: FlashcardServiceProtocol {
     }
     
     func add(flashcard: Flashcard) {
-        
+        repository.create(model: flashcard)
     }
     
     func add(flashcards: [Flashcard]) {
-        
+        repository.create(models: flashcards)
     }
     
     func get(byID id: UUID) -> Flashcard? {
-        return nil
+        return repository.get(byID: id)
     }
     
     func getAll() -> [Flashcard] {
-        return []
+        return repository.getAll()
     }
     
     func update(flashcard: Flashcard) -> Bool {
-        return false
+        return repository.update(model: flashcard)
     }
     
     func delete(flashcard: Flashcard) -> Bool {
-            return false
+        return repository.delete(model: flashcard)
     }
-
 }
