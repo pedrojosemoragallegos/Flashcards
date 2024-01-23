@@ -1,18 +1,18 @@
 import Foundation
 
 class ServiceContainer: ObservableObject {
-    let ankiDeckService: GenericDeckService<AnkiAlgorithmDeck, InMemoryDeckRepository<AnkiAlgorithmDeck, AnkiAlgorithmCard>>
-    let leitnerDeckService: GenericDeckService<LeitnerSystemDeck, InMemoryDeckRepository<LeitnerSystemDeck, LeitnerSystemCard>>
-    let flashcardService: GenericFlashcardService<InMemoryFlashcardRepository>
+    let ankiAlgorithmDeckService: AnkiAlgorithmDeckService
+    let leitnerSystemDeckService: LeitnerSystemDeckService
+    let flashcardService: FlashcardService
 
     init(mockData: Bool = true) {
-        let ankiDeckRepository = InMemoryDeckRepository<AnkiAlgorithmDeck, AnkiAlgorithmCard>()
-        let leitnerDeckRepository = InMemoryDeckRepository<LeitnerSystemDeck, LeitnerSystemCard>()
+        let ankiAlgorithmRepository = InMemoryAnkiAlgorithmRepository()
+        let leitnerSystemRepository = InMemoryLeitnerSystemDeckRepository()
         let flashcardRepository = InMemoryFlashcardRepository()
-
-        ankiDeckService = GenericDeckService(repository: ankiDeckRepository)
-        leitnerDeckService = GenericDeckService(repository: leitnerDeckRepository)
-        flashcardService = GenericFlashcardService(repository: flashcardRepository)
+    
+        ankiAlgorithmDeckService = AnkiAlgorithmDeckService(repository: ankiAlgorithmRepository)
+        leitnerSystemDeckService = LeitnerSystemDeckService(repository: leitnerSystemRepository)
+        flashcardService = FlashcardService(repository: flashcardRepository)
         
         
         if mockData {
@@ -25,9 +25,9 @@ class ServiceContainer: ObservableObject {
         let deck2 = LeitnerSystemDeck(name: "Machine Learning", numberOfBoxes: 10)
         let deck3 = AnkiAlgorithmDeck(name: "Physics")
         
-        leitnerDeckService.add(deck: deck1)
-        leitnerDeckService.add(deck: deck2)
-        ankiDeckService.add(deck: deck3)
+        leitnerSystemDeckService.add(deck: deck1)
+        leitnerSystemDeckService.add(deck: deck2)
+        ankiAlgorithmDeckService.add(deck: deck3)
         
         let flashcards1 = [
             Flashcard(question: "Dog", answer: "Hund"),
@@ -46,10 +46,10 @@ class ServiceContainer: ObservableObject {
         ]
         
         flashcardService.add(flashcards: flashcards1 + flashcards2 + flashcards3)
-        
-        leitnerDeckService.addFlashcards(flashcards: flashcards1, deck: deck1)
-        leitnerDeckService.addFlashcards(flashcards: flashcards2, deck: deck2)
-        ankiDeckService.addFlashcards(flashcards: flashcards3, deck: deck3)
+                
+        leitnerSystemDeckService.addFlashcards(flashcards: flashcards1, deck: deck1)
+        leitnerSystemDeckService.addFlashcards(flashcards: flashcards2, deck: deck2)
+        ankiAlgorithmDeckService.addFlashcards(flashcards: flashcards3, deck: deck3)
 
 
     }

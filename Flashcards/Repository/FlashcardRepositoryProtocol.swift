@@ -1,3 +1,4 @@
-protocol FlashcardRepositoryProtocol: RepositoryProtocol where ModelType: FlashcardProtocol{
+protocol FlashcardRepositoryProtocol: RepositoryProtocol where ModelType: FlashcardProtocol, FlashcardType: FlashcardProtocol {
+    associatedtype FlashcardType: FlashcardProtocol
     
 }

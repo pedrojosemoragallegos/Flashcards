@@ -1,6 +1,6 @@
-protocol DeckRepositoryProtocol: RepositoryProtocol where ModelType: DeckProtocol {
-    associatedtype CardType: SpecialCardProtocol
+protocol DeckRepositoryProtocol: RepositoryProtocol where ModelType: DeckProtocol, FlashcardType: FlashcardProtocol {
+    associatedtype FlashcardType: FlashcardProtocol
     
-    func addSpecialCard(specialCard: CardType, deck: ModelType)
+    func addFlashcard(flashcard: FlashcardType, deck: ModelType)
     
 }
