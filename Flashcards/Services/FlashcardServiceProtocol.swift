@@ -1,6 +1,6 @@
 import Foundation
 
-protocol FlashcardServiceProtocol where RepositoryType: FlashcardRepositoryProtocol {
+protocol FlashcardServiceProtocol: ServiceProtocol where RepositoryType: FlashcardRepositoryProtocol {
     associatedtype RepositoryType: FlashcardRepositoryProtocol
     
     var repository: RepositoryType { get }

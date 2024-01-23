@@ -1,6 +1,6 @@
 import Foundation
 
-protocol DeckServiceProtocol where RepositoryType: DeckRepositoryProtocol {
+protocol DeckServiceProtocol: ServiceProtocol where RepositoryType: DeckRepositoryProtocol {
     associatedtype RepositoryType: DeckRepositoryProtocol
     
     var repository: RepositoryType { get }

@@ -6,14 +6,9 @@ class ServiceContainer: ObservableObject {
     let flashcardService: FlashcardService
 
     init(mockData: Bool = true) {
-        let ankiAlgorithmRepository = InMemoryAnkiAlgorithmRepository()
-        let leitnerSystemRepository = InMemoryLeitnerSystemDeckRepository()
-        let flashcardRepository = InMemoryFlashcardRepository()
-    
-        ankiAlgorithmDeckService = AnkiAlgorithmDeckService(repository: ankiAlgorithmRepository)
-        leitnerSystemDeckService = LeitnerSystemDeckService(repository: leitnerSystemRepository)
-        flashcardService = FlashcardService(repository: flashcardRepository)
-        
+        ankiAlgorithmDeckService = ServiceFactory.createRepository(for: .inMemoryAnkiAlgorithm) as! AnkiAlgorithmDeckService
+        leitnerSystemDeckService = ServiceFactory.createRepository(for: .inMemoryLeitnerSystem) as! LeitnerSystemDeckService
+        flashcardService = ServiceFactory.createRepository(for: .InMemoryFlashcard) as! FlashcardService        
         
         if mockData {
             createMockData()
@@ -50,8 +45,6 @@ class ServiceContainer: ObservableObject {
         leitnerSystemDeckService.addFlashcards(flashcards: flashcards1, deck: deck1)
         leitnerSystemDeckService.addFlashcards(flashcards: flashcards2, deck: deck2)
         ankiAlgorithmDeckService.addFlashcards(flashcards: flashcards3, deck: deck3)
-
-
     }
 
 }
