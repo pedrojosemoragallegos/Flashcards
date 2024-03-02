@@ -6,8 +6,10 @@ class DeckViewModel: ObservableObject {
     private let leitnerSystemDeckService: LeitnerSystemDeckService<InMemoryLeitnerSystemDeckRepository>
     private let ankiAlgorithmDeckService: AnkiAlgorithmDeckService<InMemoryAnkiAlgorithmRepository>
     
-    init(leitnerSystemDeckService: LeitnerSystemDeckService<InMemoryLeitnerSystemDeckRepository>,
-         ankiAlgorithmDeckService: AnkiAlgorithmDeckService<InMemoryAnkiAlgorithmRepository>) {
+    init(
+        leitnerSystemDeckService: LeitnerSystemDeckService<InMemoryLeitnerSystemDeckRepository>,
+         ankiAlgorithmDeckService: AnkiAlgorithmDeckService<InMemoryAnkiAlgorithmRepository>
+    ) {
         self.leitnerSystemDeckService = leitnerSystemDeckService
         self.ankiAlgorithmDeckService = ankiAlgorithmDeckService
         
@@ -15,7 +17,6 @@ class DeckViewModel: ObservableObject {
     }
     
     private func loadDecks() {
-        // Fetch decks from both services and combine them
         let leitnerDecks = leitnerSystemDeckService.getAll().map { $0 as any DeckProtocol }
         let ankiDecks = ankiAlgorithmDeckService.getAll().map { $0 as any DeckProtocol }
         

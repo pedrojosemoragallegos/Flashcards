@@ -19,9 +19,5 @@ class LeitnerSystemDeck: DeckProtocol  {
         self.init(name: name, numberOfBoxes: numberOfboxes)
         self.specialCards += specialCards
     }
-    
-    static func createSpecialCard(flashcard: Flashcard) -> LeitnerSystemCard {
-        return LeitnerSystemCard(flashcard: flashcard, currentBox: 0)
-    }
 
 }

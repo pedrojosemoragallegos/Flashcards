@@ -7,6 +7,4 @@ protocol DeckProtocol: ModelProtocol where SpecialCardType: SpecialCardProtocol 
     var specialCards: [SpecialCardType] { get set }
     var algorithmName: String { get }
     
-    static func createSpecialCard(flashcard: Flashcard) -> SpecialCardType
-    
 }

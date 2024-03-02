@@ -18,7 +18,7 @@ struct ContentView: View {
                     Spacer()
                 }
             }
-            .navigationTitle("Your Title Here") // Set your desired title here
+            .navigationTitle("Decks") 
         }
     }
 }
